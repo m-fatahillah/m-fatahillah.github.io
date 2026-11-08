@@ -1,7 +1,7 @@
 /**
  * PORTFOLIO DATA CONFIGURATION
- * Real projects curated from https://github.com/m-fatahillah
- * Featuring standalone software engineering projects & architectures.
+ * Real projects curated from https://github.com/m-fatahillah and team collaborations.
+ * Authentic engineering credentials • Polinema Informatics Engineering
  */
 window.PORTFOLIO_DATA = {
   profile: {
@@ -10,30 +10,30 @@ window.PORTFOLIO_DATA = {
     badge: "Available for 2026 Opportunities",
     headlinePrefix: "Hey, I'm",
     typewriterRoles: [
+      "Backend Systems (Lab IVSS)",
       "Full-Stack Web (Vue 3 & Laravel)",
       "Flutter Clean Architecture",
-      "Interactive Geospatial Maps",
-      "Machine Learning & Vision Pipelines"
+      "AI Vector Search & Pipelines"
     ],
-    bio: "Software Engineer based in Indonesia. Specializing in modern full-stack web platforms with Vue 3 and Laravel, Clean Architecture mobile applications in Flutter, and analytical machine learning pipelines — focused on delivering resilient, user-centric digital products.",
+    bio: "Informatics Engineering student at State Polytechnic of Malang (POLINEMA). Backend Developer on the Intelligent Vision & Smart System (IVSS) Lab platform and full-stack developer on Koze-Kost — specializing in scalable database architectures, AI-integrated workflows, and Clean Architecture mobile apps.",
     location: "Malang, Indonesia (WIB • UTC+7)",
     email: "fatahcrown789@gmail.com",
     githubUrl: "https://github.com/m-fatahillah",
     linkedinUrl: "https://linkedin.com/in/m-fatahillah",
     resumeUrl: "#",
     metrics: [
-      { value: "Koze-Kost", label: "Flagship Web App" },
-      { value: "4+", label: "Core Architectures" },
-      { value: "Full-Stack", label: "Web & Mobile Focus" }
+      { value: "Lab IVSS", label: "Backend Developer" },
+      { value: "Koze-Kost", label: "Full-Stack Web" },
+      { value: "CleanArch", label: "Flutter Mobile" }
     ],
     terminalPreview: {
-      user: "fatahillah@dev-node",
-      cmd: "fatahillah --list-projects --featured",
+      user: "fatahillah@polinema-node",
+      cmd: "fatahillah --list-projects --production",
       output: [
-        "koze-kost-project   [Vue 3 • Inertia.js • Laravel • Leaflet Maps • AI Chat]",
+        "pbl-lab-ivss        [Backend Dev • PHP 8.2 • PostgreSQL • Docker • AI Vector Search]",
+        "koze-kost-project   [Full-Stack • Vue 3 • Inertia.js • Laravel • Leaflet Maps]",
         "cleanarch-mobile    [Flutter • Riverpod DI • SOLID • Firebase FCM • Offline-First]",
-        "creditcluster-ai    [Scikit-Learn • K-Means • DBSCAN • Silhouette Validated]",
-        "visionfilter-cv     [OpenCV • Spatial Convolutions • Normalized CDF Histograms]"
+        "creditcluster-ai    [Python • Scikit-Learn • K-Means • DBSCAN • Silhouette Validated]"
       ]
     }
   },
@@ -48,51 +48,51 @@ window.PORTFOLIO_DATA = {
   ],
 
   marqueeTech: [
-    "Vue.js 3", "Inertia.js", "Laravel", "Leaflet Maps", "Flutter", 
-    "Dart", "Riverpod", "Python", "OpenCV", "Scikit-Learn", 
-    "Tailwind CSS", "MySQL", "PostgreSQL", "Docker", "Git"
+    "PHP 8.2", "PostgreSQL", "Laravel", "Vue.js 3", "Inertia.js", 
+    "Docker", "Nginx", "Flutter", "Dart", "Riverpod", 
+    "Python", "OpenCV", "Scikit-Learn", "Leaflet Maps", "Git"
   ],
 
   about: {
     sectionNum: "01 / ABOUT ME",
-    heading: "Engineering High-Impact Digital Solutions",
-    quote: "Blending modern full-stack web development with clean-architecture mobile systems and machine learning pipelines.",
-    body: "I am a Software Engineer dedicated to crafting robust digital products. My core focus lies in modern full-stack development using Vue 3 and Laravel (Inertia.js stack), building mobile apps adhering strictly to SOLID Clean Architecture principles in Flutter, and developing analytical computer vision and machine learning models in Python.",
+    heading: "Backend Engineering & Multiplatform Systems",
+    quote: "Building reliable backend services, AI-augmented management platforms, and clean-architecture mobile software.",
+    body: "I am an Informatics Engineering student at State Polytechnic of Malang (POLINEMA) with proven experience as a Backend Developer on enterprise-grade academic platforms. My core competence spans designing scalable relational schemas in PostgreSQL, building authenticated multi-role APIs, containerizing stacks with Docker & Nginx, and engineering responsive mobile apps adhering strictly to SOLID Clean Architecture.",
     highlights: [
-      { title: "Full-Stack Web Engineering", desc: "Vue 3, Inertia.js, and Laravel backends with interactive Leaflet mapping." },
-      { title: "Mobile Clean Architecture", desc: "Feature-First 3-layer mobile design with Riverpod DI, FCM, and offline caching." },
-      { title: "Data & Computer Vision", desc: "Unsupervised customer credit clustering and mathematical OpenCV image processing." }
+      { title: "Backend & Systems Architecture", desc: "Engineered core database schemas, RBAC multi-role auth, and API integrations for Lab IVSS." },
+      { title: "Full-Stack Web & GIS", desc: "Vue 3, Inertia.js, and Laravel backends with interactive Leaflet mapping in Koze-Kost." },
+      { title: "Mobile Clean Architecture", desc: "Feature-First 3-layer mobile design with Riverpod DI, FCM, and offline caching in Flutter." }
     ]
   },
 
   expertise: {
     sectionNum: "02 / EXPERTISE",
     heading: "Core Competence & Technical Stack",
-    subheading: "A verified toolkit applied directly across production-ready web platforms and mobile architectures.",
+    subheading: "Verified technologies actively used in production systems and enterprise laboratory platforms.",
     categories: [
       {
+        id: "backend",
+        title: "Backend & Database Engineering",
+        description: "Structuring secure relational databases, custom MVC architectures, multi-role RBAC, and containerized microservices.",
+        tags: ["PHP 8.2", "PostgreSQL", "Laravel 11", "MySQL", "RBAC Security", "REST APIs", "OpenAI Embeddings"]
+      },
+      {
         id: "web",
-        title: "Full-Stack Web Development",
-        description: "Building responsive, reactive single-page applications and secure API backends.",
-        tags: ["Vue.js 3", "Inertia.js", "Laravel 11", "Tailwind CSS v4", "Leaflet Maps", "Zod", "REST APIs"]
+        title: "Full-Stack Web & GIS",
+        description: "Developing modern reactive single-page applications with Inertia.js, Vue 3, and interactive geospatial mapping.",
+        tags: ["Vue.js 3", "Inertia.js", "Tailwind CSS v4", "Leaflet Maps", "Zod", "Vite"]
       },
       {
         id: "mobile",
         title: "Mobile App Architecture",
-        description: "Structuring scalable multiplatform Flutter applications with decoupled business logic.",
+        description: "Structuring scalable multiplatform Flutter applications with decoupled business logic and centralized DI.",
         tags: ["Flutter", "Dart", "Clean Architecture", "Riverpod DI", "Firebase FCM", "Offline Storage"]
       },
       {
-        id: "ai-vision",
-        title: "Machine Learning & Vision",
-        description: "Implementing clustering models and performing digital image processing algorithms.",
-        tags: ["Python", "Scikit-Learn", "OpenCV", "NumPy", "Pandas", "Matplotlib", "Jupyter"]
-      },
-      {
-        id: "devops-tools",
-        title: "DevOps & Engineering Tools",
-        description: "Ensuring containerized reproducibility, rigorous testing suites, and git workflow hygiene.",
-        tags: ["Docker", "Docker Compose", "Git & GitHub", "PHPUnit", "Postman", "Linux / Bash"]
+        id: "devops-ai",
+        title: "DevOps & Machine Learning",
+        description: "Managing containerized deployments, automated testing suites, and unsupervised clustering algorithms.",
+        tags: ["Docker", "Docker Compose", "Nginx", "Git & GitHub", "Python", "Scikit-Learn", "PHPUnit"]
       }
     ]
   },
@@ -100,8 +100,21 @@ window.PORTFOLIO_DATA = {
   timeline: {
     sectionNum: "03 / TIMELINE",
     heading: "Engineering Milestones & Project Delivery",
-    subheading: "A timeline of delivered software platforms, architectural designs, and team collaborations.",
+    subheading: "A timeline of delivered software platforms, laboratory systems, and team collaborations.",
     items: [
+      {
+        period: "2025 — Present",
+        role: "Backend Developer — Lab IVSS Information System",
+        organization: "Intelligent Vision & Smart System (IVSS) Lab, POLINEMA",
+        location: "Malang, East Java",
+        summary: "Co-engineered the comprehensive laboratory management platform for the IVSS Laboratory at State Polytechnic of Malang.",
+        points: [
+          "Structured relational database models and schema migrations in PostgreSQL for research, publications, and multi-role users.",
+          "Connected and synchronized all dashboard modules (admin, news, training, and research galleries) with live database pipelines.",
+          "Implemented Role-Based Access Control (RBAC) supporting Admin Lab, Admin Berita, Lab Members, and Students.",
+          "Configured containerized multi-service deployment with Docker, Nginx, and environment isolation."
+        ]
+      },
       {
         period: "2025 — Present",
         role: "Full-Stack Developer — Koze-Kost Project",
@@ -118,7 +131,7 @@ window.PORTFOLIO_DATA = {
       {
         period: "2024 — 2025",
         role: "Mobile Software Engineer — Clean Architecture",
-        organization: "Mobile Systems Engineering",
+        organization: "Mobile Systems Engineering, POLINEMA",
         location: "Malang, East Java",
         summary: "Engineered scalable multiplatform Flutter applications structured under strict SOLID principles and decoupled layer separation.",
         points: [
@@ -133,14 +146,25 @@ window.PORTFOLIO_DATA = {
   showcase: {
     sectionNum: "04 / SHOWCASE",
     heading: "Featured Engineering Projects",
-    subheading: "Standalone projects scanned directly from my GitHub — click 'Repository Source' to explore the code.",
+    subheading: "Production platforms and standalone repositories — click 'Repository Source' to explore the code.",
     projects: [
+      {
+        id: "pbl-lab-ivss",
+        title: "Sistem Informasi Laboratorium IVSS",
+        badge: "BACKEND DEV • PHP 8.2 + POSTGRESQL + DOCKER",
+        tagline: "Intelligent Vision & Smart System Lab Management & Research Hub",
+        description: "Comprehensive web management and research information system for the Intelligent Vision and Smart System (IVSS) Laboratory at POLINEMA. Features a Smart Research & Publication Hub, multi-tier Role-Based Access Control (Admin Lab, Admin Berita, Anggota Lab, Mahasiswa), digital approval workflows, Google Scholar synchronization, and AI Supervisor Recommendations via OpenAI vector embeddings.",
+        metrics: "PostgreSQL Database • Multi-Role RBAC • Dockerized Nginx • AI Vector Search",
+        tags: ["PHP 8.2", "PostgreSQL", "Custom MVC", "Docker", "Nginx", "OpenAI Embeddings", "Tailwind CSS"],
+        codeUrl: "https://github.com/Atherizz/pbl-lab-ivss",
+        demoUrl: "https://github.com/Atherizz/pbl-lab-ivss"
+      },
       {
         id: "koze-kost",
         title: "Koze-Kost — Smart Property & Boarding Platform",
-        badge: "FEATURED • VUE 3 + LARAVEL + LEAFLET",
+        badge: "FULL-STACK • VUE 3 + LARAVEL + LEAFLET",
         tagline: "All-in-One Boarding House Discovery with AI Chat & Geospatial Maps",
-        description: "A modern full-stack accommodation portal connecting boarding house seekers, property owners, and administrators. Powered by Vue.js 3 (Inertia.js), Laravel backend, Tailwind CSS v4, and Leaflet interactive map rendering. Features AI chat accommodations recommendations, real-time owner-seeker communication, facility management, and password recovery workflows.",
+        description: "Modern full-stack accommodation portal connecting boarding house seekers, property owners, and administrators. Powered by Vue.js 3 (Inertia.js), Laravel backend, Tailwind CSS v4, and Leaflet interactive map rendering. Features AI chat accommodations recommendations, real-time owner-seeker communication, facility management, and password recovery workflows.",
         metrics: "Interactive Leaflet Maps • AI Chatbot Assistant • Inertia.js Stack",
         tags: ["Vue.js 3", "Laravel 11", "Inertia.js", "Leaflet Maps", "Tailwind CSS v4", "Docker", "Zod"],
         codeUrl: "https://github.com/m-fatahillah/koze-kost-project",
@@ -167,17 +191,6 @@ window.PORTFOLIO_DATA = {
         tags: ["Python", "Scikit-Learn", "K-Means", "DBSCAN", "Pandas", "Matplotlib"],
         codeUrl: "https://github.com/m-fatahillah/Machine-Learning-M.Fatahillah-Athabrani-244107020121",
         demoUrl: "https://github.com/m-fatahillah/Machine-Learning-M.Fatahillah-Athabrani-244107020121"
-      },
-      {
-        id: "visionfilter-pcvk",
-        title: "VisionFilter — Image Processing & Convolution Engine",
-        badge: "COMPUTER VISION • OPENCV",
-        tagline: "Spatial Filtering, Cumulative Distribution Function & Histograms",
-        description: "Computational computer vision and digital image processing pipeline built in Python with OpenCV and NumPy. Implements customized spatial convolutions, edge enhancement filters, multi-channel histogram equalizations, and normalized Cumulative Distribution Function (CDF) curve evaluations on image datasets.",
-        metrics: "Zero-Difference Validation • Normalized CDF Curves",
-        tags: ["Python", "OpenCV", "NumPy", "Computer Vision", "Google Colab"],
-        codeUrl: "https://github.com/m-fatahillah/PCVK26_15_FATAH",
-        demoUrl: "https://github.com/m-fatahillah/PCVK26_15_FATAH"
       }
     ]
   },
