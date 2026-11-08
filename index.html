@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>M. Fatahillah | Software Engineer & Intelligent Systems</title>
-  <meta name="description" content="Portfolio of M. Fatahillah — Software Engineer specializing in backend architectures, data pipelines, and computer vision." />
+  <meta name="description"
+    content="Portfolio of M. Fatahillah — Software Engineer specializing in backend architectures, data pipelines, and computer vision." />
   <meta name="author" content="M. Fatahillah" />
   <meta name="theme-color" content="#090d12" />
   <link rel="canonical" href="https://m-fatahillah.github.io/" />
@@ -14,15 +16,19 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://m-fatahillah.github.io/" />
   <meta property="og:title" content="M. Fatahillah | Software Engineer & Intelligent Systems" />
-  <meta property="og:description" content="Software Engineer specializing in scalable backend architectures, automated data pipelines, and computer vision." />
+  <meta property="og:description"
+    content="Software Engineer specializing in scalable backend architectures, automated data pipelines, and computer vision." />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="M. Fatahillah | Software Engineer & Intelligent Systems" />
-  <meta name="twitter:description" content="Software Engineer specializing in scalable backend architectures, automated data pipelines, and computer vision." />
+  <meta name="twitter:description"
+    content="Software Engineer specializing in scalable backend architectures, automated data pipelines, and computer vision." />
 
   <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -75,13 +81,16 @@
     ::-webkit-scrollbar {
       width: 6px;
     }
+
     ::-webkit-scrollbar-track {
       background: #090d12;
     }
+
     ::-webkit-scrollbar-thumb {
       background: #1f2a3a;
       border-radius: 9999px;
     }
+
     ::-webkit-scrollbar-thumb:hover {
       background: #6f869a;
     }
@@ -89,7 +98,7 @@
     /* Ambient Subtle Glow */
     .bg-mesh {
       background-color: #090d12;
-      background-image: 
+      background-image:
         radial-gradient(circle at 50% 0%, rgba(141, 164, 184, 0.08) 0%, transparent 55%),
         radial-gradient(circle at 100% 35%, rgba(111, 134, 154, 0.03) 0%, transparent 40%),
         radial-gradient(circle at 0% 75%, rgba(141, 164, 184, 0.03) 0%, transparent 40%);
@@ -101,6 +110,7 @@
       transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1), border-color 220ms ease, box-shadow 220ms ease;
       will-change: transform;
     }
+
     .bento-card:hover {
       transform: translateY(-3px);
       border-color: rgba(141, 164, 184, 0.4);
@@ -123,25 +133,38 @@
       margin-left: 2px;
       animation: blink 1s step-start infinite;
     }
+
     @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0;
+      }
     }
   </style>
 </head>
 
-<body class="bg-mesh text-chalk-secondary font-sans antialiased selection:bg-sierra/25 selection:text-chalk-primary min-h-screen relative overflow-x-hidden">
+<body
+  class="bg-mesh text-chalk-secondary font-sans antialiased selection:bg-sierra/25 selection:text-chalk-primary min-h-screen relative overflow-x-hidden">
 
   <!-- ==================== 1. FLOATING MINIMALIST NAVBAR ==================== -->
   <header class="fixed top-4 left-0 right-0 z-50 px-4 sm:px-6 pointer-events-none">
-    <nav class="max-w-3xl mx-auto pointer-events-auto backdrop-blur-md bg-canvas-card/85 border border-canvas-border rounded-full px-4 sm:px-5 py-2.5 shadow-xl shadow-black/60 flex items-center justify-between transition-all duration-300">
-      
+    <nav
+      class="max-w-3xl mx-auto pointer-events-auto backdrop-blur-md bg-canvas-card/85 border border-canvas-border rounded-full px-4 sm:px-5 py-2.5 shadow-xl shadow-black/60 flex items-center justify-between transition-all duration-300">
+
       <!-- Brand / Logo -->
-      <a href="#home" class="flex items-center gap-2 group text-chalk-primary hover:text-sierra-light transition-colors">
-        <span class="w-7 h-7 rounded-full bg-canvas-subtle border border-canvas-border flex items-center justify-center font-mono text-[11px] font-bold text-sierra group-hover:border-sierra/50 transition-colors">
+      <a href="#home"
+        class="flex items-center gap-2 group text-chalk-primary hover:text-sierra-light transition-colors">
+        <span
+          class="w-7 h-7 rounded-full bg-canvas-subtle border border-canvas-border flex items-center justify-center font-mono text-[11px] font-bold text-sierra group-hover:border-sierra/50 transition-colors">
           MF
         </span>
-        <span class="font-mono text-xs sm:text-sm font-semibold tracking-tight text-chalk-primary hidden xs:inline-block">
+        <span
+          class="font-mono text-xs sm:text-sm font-semibold tracking-tight text-chalk-primary hidden xs:inline-block">
           m-fatahillah
         </span>
       </a>
@@ -163,14 +186,16 @@
           </span>
         </div>
 
-        <button id="mobile-toggle" type="button" aria-label="Toggle navigation" class="md:hidden p-1.5 text-chalk-muted hover:text-chalk-primary hover:bg-canvas-border/50 rounded-full transition-colors">
+        <button id="mobile-toggle" type="button" aria-label="Toggle navigation"
+          class="md:hidden p-1.5 text-chalk-muted hover:text-chalk-primary hover:bg-canvas-border/50 rounded-full transition-colors">
           <i data-lucide="menu" class="w-4 h-4"></i>
         </button>
       </div>
     </nav>
 
     <!-- Mobile Drawer -->
-    <div id="mobile-drawer" class="max-w-3xl mx-auto mt-2 hidden pointer-events-auto md:hidden backdrop-blur-lg bg-canvas-card/95 border border-canvas-border rounded-2xl p-3 shadow-2xl shadow-black/80 flex-col gap-1 font-mono text-xs">
+    <div id="mobile-drawer"
+      class="max-w-3xl mx-auto mt-2 hidden pointer-events-auto md:hidden backdrop-blur-lg bg-canvas-card/95 border border-canvas-border rounded-2xl p-3 shadow-2xl shadow-black/80 flex-col gap-1 font-mono text-xs">
       <!-- Rendered by JS -->
     </div>
   </header>
@@ -180,9 +205,10 @@
 
     <!-- ==================== HERO SECTION ==================== -->
     <section id="home" class="scroll-mt-32 space-y-6">
-      
+
       <!-- Status Capsule -->
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-canvas-card border border-canvas-border text-xs font-mono text-sierra">
+      <div
+        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-canvas-card border border-canvas-border text-xs font-mono text-sierra">
         <span class="w-1.5 h-1.5 rounded-full bg-sierra animate-pulse"></span>
         <span id="hero-badge">Available for 2026 Opportunities</span>
       </div>
@@ -204,7 +230,9 @@
 
       <!-- Human Grounded Bio -->
       <p id="hero-bio" class="text-chalk-secondary text-sm sm:text-base leading-relaxed font-light max-w-2xl">
-        Software Engineer based in Indonesia. Specializing in engineering reliable, highly scalable backend software alongside automated data pipelines and computer vision systems — building high-impact products that solve concrete, real-world problems.
+        Software Engineer based in Indonesia. Specializing in engineering reliable, highly scalable backend software
+        alongside automated data pipelines and computer vision systems — building high-impact products that solve
+        concrete, real-world problems.
       </p>
 
       <!-- Key Metrics Row -->
@@ -214,15 +242,18 @@
 
       <!-- Action Buttons -->
       <div class="flex flex-wrap items-center gap-3 pt-2">
-        <a href="#showcase" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-sierra text-canvas-card font-semibold text-xs sm:text-sm hover:bg-sierra-light transition-all shadow-md shadow-sierra/10 active:scale-[0.98]">
+        <a href="#showcase"
+          class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-sierra text-canvas-card font-semibold text-xs sm:text-sm hover:bg-sierra-light transition-all shadow-md shadow-sierra/10 active:scale-[0.98]">
           <span>Explore Work</span>
           <i data-lucide="arrow-down" class="w-3.5 h-3.5"></i>
         </a>
-        <a href="#contact" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-canvas-card border border-canvas-border text-chalk-primary text-xs sm:text-sm font-medium hover:border-sierra/60 hover:text-sierra transition-all active:scale-[0.98]">
+        <a href="#contact"
+          class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-canvas-card border border-canvas-border text-chalk-primary text-xs sm:text-sm font-medium hover:border-sierra/60 hover:text-sierra transition-all active:scale-[0.98]">
           <i data-lucide="send" class="w-3.5 h-3.5 text-sierra"></i>
           <span>Get in Touch</span>
         </a>
-        <a id="hero-github-link" href="https://github.com/m-fatahillah" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-canvas-card border border-canvas-border text-chalk-muted hover:text-chalk-primary hover:border-canvas-hover transition-colors text-xs font-mono">
+        <a id="hero-github-link" href="https://github.com/m-fatahillah" target="_blank" rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-canvas-card border border-canvas-border text-chalk-muted hover:text-chalk-primary hover:border-canvas-hover transition-colors text-xs font-mono">
           <i data-lucide="github" class="w-4 h-4 text-sierra"></i>
           <span class="hidden xs:inline">GitHub</span>
         </a>
@@ -257,8 +288,10 @@
       </p>
 
       <!-- Interactive Terminal Preview Card (Caesarian Style) -->
-      <div class="p-4 sm:p-5 rounded-2xl bg-canvas-card border border-canvas-border font-mono text-xs space-y-3 shadow-lg">
-        <div class="flex items-center justify-between pb-2 border-b border-canvas-border/70 text-chalk-muted text-[11px]">
+      <div
+        class="p-4 sm:p-5 rounded-2xl bg-canvas-card border border-canvas-border font-mono text-xs space-y-3 shadow-lg">
+        <div
+          class="flex items-center justify-between pb-2 border-b border-canvas-border/70 text-chalk-muted text-[11px]">
           <div class="flex items-center gap-1.5">
             <span class="w-2.5 h-2.5 rounded-full bg-sierra/40"></span>
             <span class="w-2.5 h-2.5 rounded-full bg-sierra/20"></span>
@@ -269,7 +302,8 @@
         </div>
 
         <div class="space-y-1 text-chalk-secondary">
-          <p><span class="text-sierra">fatahillah@dev-node:~$</span> <span class="text-chalk-primary font-medium">fatahillah --status --focus</span></p>
+          <p><span class="text-sierra">fatahillah@dev-node:~$</span> <span
+              class="text-chalk-primary font-medium">fatahillah --status --focus</span></p>
           <div id="terminal-output" class="text-chalk-muted space-y-0.5 pt-1 text-[11px]">
             <!-- Rendered by JS -->
           </div>
@@ -335,7 +369,8 @@
             Production-grade applications built for real performance, scalability, and impact.
           </p>
         </div>
-        <a href="https://github.com/m-fatahillah" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-sierra hover:underline hidden sm:inline-flex items-center gap-1">
+        <a href="https://github.com/m-fatahillah" target="_blank" rel="noopener noreferrer"
+          class="text-xs font-mono text-sierra hover:underline hidden sm:inline-flex items-center gap-1">
           <span>GitHub Showcase</span>
           <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
         </a>
@@ -356,7 +391,8 @@
           <h2 id="contact-heading" class="text-xl sm:text-2xl font-bold text-chalk-primary tracking-tight">
             Let's Connect & Build
           </h2>
-          <p id="contact-subheading" class="text-xs sm:text-sm text-chalk-secondary font-light max-w-xl leading-relaxed">
+          <p id="contact-subheading"
+            class="text-xs sm:text-sm text-chalk-secondary font-light max-w-xl leading-relaxed">
             Have an opportunity, an architectural challenge, or a project to discuss? Feel free to reach out directly.
           </p>
         </div>
@@ -365,23 +401,27 @@
         <div class="flex flex-wrap items-center gap-3 pt-1">
           <!-- Copy Email Button -->
           <div class="relative">
-            <button id="copy-email-btn" type="button" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-sierra/15 border border-sierra/30 text-sierra-light font-mono text-xs sm:text-sm font-medium hover:bg-sierra/25 hover:border-sierra/60 transition-all active:scale-[0.98]">
+            <button id="copy-email-btn" type="button"
+              class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-sierra/15 border border-sierra/30 text-sierra-light font-mono text-xs sm:text-sm font-medium hover:bg-sierra/25 hover:border-sierra/60 transition-all active:scale-[0.98]">
               <i data-lucide="copy" class="w-3.5 h-3.5 text-sierra"></i>
               <span id="copy-text">Copy Email</span>
             </button>
-            <div id="copy-tooltip" class="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-0.5 bg-canvas-card border border-sierra/40 text-sierra font-mono text-[10px] rounded shadow-md pointer-events-none opacity-0 transition-opacity whitespace-nowrap">
+            <div id="copy-tooltip"
+              class="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-0.5 bg-canvas-card border border-sierra/40 text-sierra font-mono text-[10px] rounded shadow-md pointer-events-none opacity-0 transition-opacity whitespace-nowrap">
               Copied to clipboard!
             </div>
           </div>
 
           <!-- Direct Mail Link -->
-          <a id="mail-link" href="mailto:fatahcrown789@gmail.com" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-canvas-subtle border border-canvas-border text-chalk-secondary hover:text-chalk-primary hover:border-canvas-hover text-xs sm:text-sm transition-colors">
+          <a id="mail-link" href="mailto:fatahcrown789@gmail.com"
+            class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-canvas-subtle border border-canvas-border text-chalk-secondary hover:text-chalk-primary hover:border-canvas-hover text-xs sm:text-sm transition-colors">
             <i data-lucide="mail" class="w-3.5 h-3.5 text-sierra"></i>
             <span>fatahcrown789@gmail.com</span>
           </a>
 
           <!-- GitHub Profile -->
-          <a href="https://github.com/m-fatahillah" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-canvas-subtle border border-canvas-border text-chalk-secondary hover:text-chalk-primary hover:border-canvas-hover text-xs sm:text-sm transition-colors">
+          <a href="https://github.com/m-fatahillah" target="_blank" rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-canvas-subtle border border-canvas-border text-chalk-secondary hover:text-chalk-primary hover:border-canvas-hover text-xs sm:text-sm transition-colors">
             <i data-lucide="github" class="w-3.5 h-3.5 text-sierra"></i>
             <span>GitHub</span>
           </a>
@@ -393,7 +433,8 @@
 
   <!-- ==================== FOOTER ==================== -->
   <footer class="border-t border-canvas-border/60 py-8 px-6 text-center">
-    <div class="max-w-3xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-mono text-chalk-muted">
+    <div
+      class="max-w-3xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-mono text-chalk-muted">
       <span id="footer-copy">© 2026 M. Fatahillah. All Rights Reserved.</span>
       <span class="text-[11px] text-chalk-muted/80">Engineered with clean architecture & quiet aesthetics.</span>
     </div>
@@ -742,4 +783,5 @@
     }
   </script>
 </body>
+
 </html>

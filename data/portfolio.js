@@ -1,37 +1,39 @@
 /**
  * PORTFOLIO DATA CONFIGURATION
- * Tone of Voice: Technical, confident, metric-driven, matching the style of caesariannn.npd-agency.org
+ * Real projects scanned directly from https://github.com/m-fatahillah
+ * Authentic engineering credentials • Polinema Informatics Engineering
  */
 window.PORTFOLIO_DATA = {
   profile: {
-    name: "M. Fatahillah",
+    name: "M. Fatahillah Athabrani",
     handle: "m-fatahillah",
     badge: "Available for 2026 Opportunities",
     headlinePrefix: "Hey, I'm",
     typewriterRoles: [
-      "Backend Architectures",
-      "Computer Vision & Edge AI",
-      "High-Throughput Data Pipelines",
-      "Robust REST & WebSocket APIs"
+      "Flutter Clean Architecture",
+      "Laravel RESTful APIs",
+      "Machine Learning Pipelines",
+      "Computer Vision with OpenCV"
     ],
-    bio: "Software Engineer based in Indonesia. Specializing in engineering reliable, highly scalable backend software alongside automated data pipelines and computer vision systems — building high-impact products that solve concrete, real-world problems.",
-    location: "Indonesia (WIB • UTC+7)",
+    bio: "Informatics Engineering student at State Polytechnic of Malang (POLINEMA). Specializing in mobile engineering with Clean Architecture, modular Laravel backend services, unsupervised machine learning pipelines, and digital image processing with OpenCV.",
+    location: "Malang, Indonesia (WIB • UTC+7)",
     email: "fatahcrown789@gmail.com",
     githubUrl: "https://github.com/m-fatahillah",
     linkedinUrl: "https://linkedin.com/in/m-fatahillah",
     resumeUrl: "#",
     metrics: [
-      { value: "15+", label: "Engineered Projects" },
-      { value: "3+", label: "Years Tech Experience" },
-      { value: "99.9%", label: "Uptime Focus" }
+      { value: "33+", label: "GitHub Repositories" },
+      { value: "4+", label: "Core Tech Disciplines" },
+      { value: "POLINEMA", label: "Informatics Major" }
     ],
     terminalPreview: {
-      user: "fatahillah@dev-node",
-      cmd: "fatahillah --status --focus",
+      user: "fatahillah@polinema-node",
+      cmd: "gh repo list m-fatahillah --visibility public",
       output: [
-        "Core Stack: Laravel • Python • PostgreSQL • TensorFlow Lite",
-        "Architecture: Microservices • Star-Schema ETL • Edge Inference",
-        "Status: Active Dev Cycle • Open for Collaborations"
+        "244107020121-mobile-course [Flutter Clean Architecture • SOLID • Riverpod]",
+        "PraktikumPWL              [Laravel 10 • Sanctum REST API • PHPUnit]",
+        "Machine-Learning-...      [K-Means • DBSCAN • Agglomerative Clustering]",
+        "PCVK26_15_FATAH           [OpenCV • CDF Histogram • Image Processing]"
       ]
     }
   },
@@ -46,82 +48,82 @@ window.PORTFOLIO_DATA = {
   ],
 
   marqueeTech: [
-    "Laravel", "PHP 8.x", "Python", "PostgreSQL", "Pentaho PDI", 
-    "TensorFlow Lite", "OpenCV", "MediaPipe", "Docker", "Git", 
-    "MySQL", "Filament Admin", "RESTful APIs", "Linux / Bash"
+    "Flutter", "Dart", "Laravel", "PHP 8.x", "Python", 
+    "OpenCV", "Scikit-Learn", "PostgreSQL", "MySQL", 
+    "Riverpod", "Clean Architecture", "Docker", "Git", "Linux"
   ],
 
   about: {
     sectionNum: "01 / ABOUT ME",
-    heading: "Engineering Reliable & Scalable Systems",
-    quote: "Bridging robust backend engineering with practical computer vision and automated data intelligence.",
-    body: "I am a Software Engineer with deep interest in backend system architecture, dimensional data warehouse pipelines, and real-time computer vision applications. I focus on developing clean, testable, and highly resilient applications that withstand real-world production loads without unnecessary infrastructure overhead.",
+    heading: "Informatics Engineering & Multiplatform Systems",
+    quote: "Building clean-architecture mobile software, modular backend APIs, and analytical machine learning pipelines.",
+    body: "I am an Informatics Engineering student at State Polytechnic of Malang (POLINEMA) focusing on software engineering principles. My work revolves around implementing SOLID-driven Clean Architecture in Flutter, engineering secure REST APIs in Laravel, exploring unsupervised machine learning clustering, and developing image processing pipelines using OpenCV and Python.",
     highlights: [
-      { title: "Backend Architecture", desc: "Crafting scalable REST APIs, authentication security, and modular service patterns." },
-      { title: "ETL & Data Warehousing", desc: "Star-schema dimensional modeling and automated scheduled pipelines." },
-      { title: "Computer Vision & Edge AI", desc: "Deploying on-device landmark recognition with minimal inference latency." }
+      { title: "Mobile Clean Architecture", desc: "Feature-First structure with Domain, Data, Presentation layers and Riverpod DI." },
+      { title: "Backend & API Security", desc: "Relational database schema modeling, Sanctum token authentication, and PHPUnit." },
+      { title: "ML & Computer Vision", desc: "Clustering algorithms (K-Means, DBSCAN) and OpenCV image processing pipelines." }
     ]
   },
 
   expertise: {
     sectionNum: "02 / EXPERTISE",
     heading: "Core Competence & Technical Stack",
-    subheading: "Technologies and architectural patterns battle-tested in real production environments.",
+    subheading: "Verified technologies actively used in my GitHub repositories and academic capstones.",
     categories: [
       {
+        id: "mobile",
+        title: "Mobile App Development",
+        description: "Designing enterprise mobile architectures using Flutter & Dart with strict separation of concerns.",
+        tags: ["Flutter", "Dart", "Clean Architecture", "Riverpod", "Firebase FCM", "Offline-First Storage"]
+      },
+      {
         id: "backend",
-        title: "Backend & Systems",
-        description: "Writing highly modular service logic, structuring secure relational databases, and microservices server nodes.",
-        tags: ["Laravel", "PHP 8+", "Filament Admin", "REST APIs", "WebSockets", "Auth & RBAC"]
+        title: "Backend & RESTful APIs",
+        description: "Structuring scalable server-side systems, relational database models, and token-based authentication.",
+        tags: ["Laravel", "PHP 8.x", "Sanctum Auth", "MySQL", "PostgreSQL", "Postman Collections"]
       },
       {
-        id: "data",
-        title: "Databases & Data Pipelines",
-        description: "Designing star-schema dimensional warehouses, automated ETL pipelines, and high-throughput query optimization.",
-        tags: ["PostgreSQL", "MySQL", "Pentaho PDI (Kettle)", "Star Schema", "Supabase", "SQL"]
+        id: "ml-cv",
+        title: "Machine Learning & Vision",
+        description: "Building clustering models and executing digital image processing algorithms on image datasets.",
+        tags: ["Python", "OpenCV", "Scikit-Learn", "NumPy", "Pandas", "Matplotlib", "Jupyter"]
       },
       {
-        id: "ai",
-        title: "Computer Vision & AI",
-        description: "Implementing edge-inference neural networks, real-time landmark tracking, and lightweight models without heavy GPU overhead.",
-        tags: ["Python", "TensorFlow Lite", "MediaPipe", "OpenCV", "Edge Inference"]
-      },
-      {
-        id: "devops",
-        title: "DevOps & Software Quality",
-        description: "Applying rigorous software quality benchmarks (ISO/IEC 25010), automated testing, and containerized production workflows.",
-        tags: ["Git & GitHub", "Docker", "Linux / Bash", "Postman", "PHPUnit", "JMeter SQA"]
+        id: "tools",
+        title: "Engineering Tools & QA",
+        description: "Applying version control hygiene, automated unit testing, and containerized development.",
+        tags: ["Git & GitHub", "PHPUnit", "Widget Testing", "Docker", "Linux / Bash", "Vite"]
       }
     ]
   },
 
   timeline: {
     sectionNum: "03 / TIMELINE",
-    heading: "Career Roadmap & Engineering Milestones",
-    subheading: "A track record of technical delivery and architectural problem-solving.",
+    heading: "Academic Roadmap & Technical Milestones",
+    subheading: "Continuous engineering progression and repository development at POLINEMA.",
     items: [
       {
         period: "2025 — Present",
-        role: "Backend & Intelligent Systems Developer",
-        organization: "Independent R&D & Client Solutions",
-        location: "Indonesia",
-        summary: "Architected modular RESTful services and engineered automated ETL pipelines for high-volume transactions, coupled with edge computer vision integration.",
+        role: "Informatics Engineering Student & Mobile Developer",
+        organization: "State Polytechnic of Malang (POLINEMA)",
+        location: "Malang, East Java",
+        summary: "Advanced coursework in Mobile App Engineering, Computer Vision, and Machine Learning.",
         points: [
-          "Developed modular backend engines using Laravel 11 and Filament Admin with strict type safety.",
-          "Designed real-time hand gesture recognition system achieving 45+ FPS on standard client devices.",
-          "Engineered dimensional star-schema models and automated scheduled batch ETL pipelines with Pentaho PDI."
+          "Implemented 3-layer Clean Architecture (Feature-First) with centralized Riverpod Dependency Injection.",
+          "Integrated Firebase Cloud Messaging (FCM), token security, and local offline-first database persistence.",
+          "Constructed digital image enhancement pipelines and multi-channel histogram equalizations in OpenCV."
         ]
       },
       {
         period: "2024 — 2025",
-        role: "Software Quality & Web Engineer",
-        organization: "Academic & Enterprise Projects",
-        location: "Indonesia",
-        summary: "Delivered web management platforms with full-lifecycle software quality assurance audits aligned with ISO/IEC 25010 standards.",
+        role: "Web & Database Systems Engineer",
+        organization: "State Polytechnic of Malang (POLINEMA)",
+        location: "Malang, East Java",
+        summary: "Engineered web architectures, relational database management systems, and automated test pipelines.",
         points: [
-          "Implemented comprehensive unit test suites using PHPUnit, ensuring high functional suitability coverage.",
-          "Conducted concurrency stress testing and load auditing using Apache JMeter (simulating 500+ concurrent requests).",
-          "Hardened API endpoints against common OWASP vulnerabilities and structured role-based access control."
+          "Developed full-stack web applications and authenticated REST APIs using Laravel with Sanctum tokens.",
+          "Designed normalized database schemas, relational migrations, and SQL optimizations for business entities.",
+          "Conducted automated test assertions with PHPUnit and documented API endpoints in Postman collections."
         ]
       }
     ]
@@ -129,50 +131,61 @@ window.PORTFOLIO_DATA = {
 
   showcase: {
     sectionNum: "04 / SHOWCASE",
-    heading: "Engineered Projects & Technical Case Studies",
-    subheading: "Production-grade applications built for real performance, scalability, and impact.",
+    heading: "Engineered Projects & GitHub Repositories",
+    subheading: "Real projects scanned directly from my GitHub — click 'Repository Source' to inspect the code.",
     projects: [
       {
-        id: "gesturesign-ai",
-        title: "GestureSign AI",
-        badge: "REAL-TIME 45+ FPS",
-        tagline: "Gamified Indonesian Sign Language Recognition System",
-        description: "Interactive real-time sign language gesture recognition running on-device inference via TensorFlow Lite and MediaPipe. Eliminates expensive cloud GPU dependencies and trims network latency under 40ms, coupled with an educational scoring engine.",
-        metrics: "45+ FPS on-device feed • Latency <40ms",
-        tags: ["TensorFlow Lite", "Python", "OpenCV", "MediaPipe", "WebSockets"],
-        codeUrl: "https://github.com/m-fatahillah",
-        demoUrl: "#"
+        id: "mobile-clean-architecture",
+        title: "Mobile Course — Clean Architecture & Mobile Systems",
+        badge: "FLUTTER • CLEAN ARCHITECTURE",
+        tagline: "Feature-First Flutter Engineering with SOLID Principles & Riverpod DI",
+        description: "A comprehensive Flutter engineering repository demonstrating production-ready Clean Architecture (Domain, Data, Presentation layers), SOLID principles, Riverpod centralized dependency injection, Firebase Cloud Messaging (FCM), secure local storage, and automated unit/widget test suites.",
+        metrics: "SOLID Principles • Riverpod DI • Unit & Widget Tested",
+        tags: ["Flutter", "Dart", "Riverpod", "Clean Architecture", "FCM", "SQLite / Hive"],
+        codeUrl: "https://github.com/m-fatahillah/244107020121-mobile-course",
+        demoUrl: "https://github.com/m-fatahillah/244107020121-mobile-course"
       },
       {
-        id: "transact-etl",
-        title: "TransactETL Data Warehouse",
-        badge: "ETL PIPELINE • 1.2M+ ROWS",
-        tagline: "Automated Enterprise Transaction Ingestion Architecture",
-        description: "Multidimensional star-schema data warehouse engineered to unify heterogeneous high-volume transactional logs. Automated recurring ETL workflows via Pentaho Data Integrator into PostgreSQL, accelerating business intelligence aggregations by 82%.",
-        metrics: "1.2M rows/batch • 82% faster query aggregation",
-        tags: ["PostgreSQL", "Pentaho PDI", "Star Schema", "SQL", "Cron Automation"],
-        codeUrl: "https://github.com/m-fatahillah",
-        demoUrl: "#"
+        id: "praktikum-pwl",
+        title: "PraktikumPWL — Enterprise Laravel & REST API",
+        badge: "LARAVEL 10 • SANCTUM API",
+        tagline: "Modular Backend with Token Authentication, Postman Specs & PHPUnit",
+        description: "Full-stack Laravel web application and RESTful API backend. Features relational database migrations across multiple entities (Users, Products, Posts, Categories, Todos), token-based Laravel Sanctum authentication, Postman API collections, and automated test verification via PHPUnit.",
+        metrics: "Sanctum Auth • Postman Collection • PHPUnit Test Suite",
+        tags: ["Laravel", "PHP 8.x", "Sanctum API", "MySQL", "Tailwind CSS", "PHPUnit"],
+        codeUrl: "https://github.com/m-fatahillah/PraktikumPWL",
+        demoUrl: "https://github.com/m-fatahillah/PraktikumPWL"
       },
       {
-        id: "estate-core",
-        title: "EstateCore Platform",
-        badge: "SQA AUDITED • ISO/IEC 25010",
-        tagline: "Modular Property Marketplace with Strict Quality Assurance",
-        description: "Full-stack property management platform built on Laravel 11 and Filament Admin. Formally audited against ISO/IEC 25010 quality standards across Functional Suitability (100% PHPUnit passing rate), Performance Efficiency (<320ms avg response), and Security.",
-        metrics: "100% test pass rate • <320ms response at 500 CCU",
-        tags: ["Laravel 11", "Filament Admin", "MySQL", "PHPUnit", "Apache JMeter"],
-        codeUrl: "https://github.com/m-fatahillah",
-        demoUrl: "#"
+        id: "ml-customer-clustering",
+        title: "Customer Credit Segmentation & Unsupervised ML",
+        badge: "SCIKIT-LEARN • CLUSTERING",
+        tagline: "Credit Card Analytics using K-Means, DBSCAN & Agglomerative Models",
+        description: "An unsupervised machine learning research repository exploring customer credit card behavioral segmentation. Implements K-Means, DBSCAN (with Elbow Method parameter optimization), and Agglomerative Hierarchical Clustering, evaluated through Silhouette Scores and Davies-Bouldin Index (DBI).",
+        metrics: "Silhouette Score & DBI Evaluated • DBSCAN & K-Means",
+        tags: ["Python", "Scikit-Learn", "K-Means", "DBSCAN", "Pandas", "Matplotlib"],
+        codeUrl: "https://github.com/m-fatahillah/Machine-Learning-M.Fatahillah-Athabrani-244107020121",
+        demoUrl: "https://github.com/m-fatahillah/Machine-Learning-M.Fatahillah-Athabrani-244107020121"
+      },
+      {
+        id: "pcvk-image-processing",
+        title: "PCVK — Computer Vision & Digital Image Processing",
+        badge: "OPENCV • PYTHON",
+        tagline: "Spatial Filtering, Cumulative Distribution Function & Histograms",
+        description: "Digital image processing and computer vision pipeline developed in Python using OpenCV and NumPy on Google Colab. Implements spatial filtering convolutions, multi-channel histogram equalizations, and normalized Cumulative Distribution Function (CDF) curve analysis on image datasets.",
+        metrics: "Zero-Difference Validation • Normalized CDF Analysis",
+        tags: ["Python", "OpenCV", "NumPy", "Computer Vision", "Google Colab", "Jupyter"],
+        codeUrl: "https://github.com/m-fatahillah/PCVK26_15_FATAH",
+        demoUrl: "https://github.com/m-fatahillah/PCVK26_15_FATAH"
       }
     ]
   },
 
   contact: {
     sectionNum: "05 / CONTACT",
-    heading: "Let's Connect & Build",
-    subheading: "Have an opportunity, an architectural challenge, or a project to discuss? Feel free to reach out directly.",
+    heading: "Let's Connect & Collaborate",
+    subheading: "Have an internship opportunity, an open-source collaboration, or an engineering project? Feel free to reach out.",
     email: "fatahcrown789@gmail.com",
-    footerCopy: "© 2026 M. Fatahillah. All Rights Reserved. Engineered with clean architecture & quiet aesthetics."
+    footerCopy: "© 2026 M. Fatahillah Athabrani. State Polytechnic of Malang. All Rights Reserved."
   }
 };
