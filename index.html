@@ -133,7 +133,7 @@
         transform: translateX(-150%);
       }
       100% {
-        transform: translateX(550%);
+        transform: translateX(650%);
       }
     }
 
@@ -178,10 +178,10 @@
       <!-- Right: Status Badge & Mobile Hamburger -->
       <div class="flex items-center gap-2.5">
         <!-- Status Indicator Pill -->
-        <div class="flex items-center gap-2 px-3 py-1 rounded-full bg-sierra-dim border border-sierra/20">
-          <span class="relative flex h-2 w-2">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sierra opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-2 w-2 bg-sierra"></span>
+        <div class="flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/25">
+          <span class="relative flex h-2.5 w-2.5">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#22c55e] opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#22c55e] shadow-[0_0_8px_#22c55e]"></span>
           </span>
           <span id="nav-status-text" class="font-mono text-[11px] sm:text-xs text-chalk-heading font-medium tracking-tight whitespace-nowrap">
             Available for work
@@ -209,11 +209,14 @@
       
       <!-- Collaboration Capsule Tag -->
       <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slateCard border border-slateBorder text-sierra text-xs sm:text-sm font-mono tracking-tight shadow-sm hover:border-sierra/40 transition-colors">
-        <span class="inline-block w-1.5 h-1.5 rounded-full bg-sierra animate-pulse"></span>
+        <span class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#22c55e] opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-[#22c55e]"></span>
+        </span>
         <span id="hero-collaboration-status">Open to Collaborations & Roles</span>
       </div>
 
-      <!-- Main Headline & Dynamic Role with Typewriter Effect -->
+      <!-- Main Headline & Role -->
       <div class="space-y-3 sm:space-y-4 max-w-3xl">
         <p class="text-xs sm:text-sm font-mono text-chalk-muted uppercase tracking-wider">
           Hey, I'm
@@ -221,9 +224,10 @@
         <h1 id="hero-name" class="text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-extrabold text-chalk-heading tracking-tight leading-[1.15]">
           Muhammad Fatahillah Athabrani
         </h1>
-        <div class="text-lg sm:text-2xl md:text-3xl font-semibold text-chalk-body tracking-tight flex items-center flex-wrap gap-2 pt-1">
-          <span>I engineer</span>
-          <span id="typewriter-text" class="text-sierra font-mono font-bold"></span>
+        <div class="text-2xl sm:text-3xl font-semibold text-sky-400 tracking-tight pt-1 flex items-center flex-wrap gap-2">
+          <span>Full-Stack Developer</span>
+          <span class="text-slate-600 font-normal hidden xs:inline">•</span>
+          <span id="typewriter-text" class="text-sierra font-mono text-base sm:text-lg font-normal"></span>
           <span class="typewriter-cursor"></span>
         </div>
         <p id="hero-role" class="text-xs sm:text-sm font-mono text-chalk-muted">
@@ -257,14 +261,15 @@
       </div>
     </section>
 
-    <!-- Container Garis Scanning Beam (Under Hero) -->
-    <div class="relative w-full max-w-5xl mx-auto my-8 sm:my-14 px-4" aria-hidden="true">
-      <!-- Garis Dasar Slate Gelap -->
-      <div class="relative w-full h-[1px] bg-[#1e293b] overflow-hidden">
-        <!-- Laser Beam Terang Meluncur (Ice Cyan / Sky) -->
-        <div class="beam-scan absolute inset-y-0 w-40 bg-gradient-to-r from-transparent via-[#38bdf8] to-transparent"></div>
-        <!-- Glow Blur di sekitarnya biar berasa neon -->
-        <div class="beam-scan absolute inset-y-0 w-32 bg-gradient-to-r from-transparent via-[#38bdf8]/80 to-transparent blur-sm"></div>
+    <!-- Container Garis Scanning Beam (Under Hero & Metrics) -->
+    <div class="relative w-full max-w-5xl mx-auto my-10 sm:my-14 px-4 overflow-hidden" aria-hidden="true">
+      <div class="relative w-full py-3">
+        <!-- Garis Dasar Slate Gelap -->
+        <div class="w-full h-[1px] bg-[#1e293b]"></div>
+        <!-- Laser Beam Terang Meluncur (Sky Blue #38bdf8) -->
+        <div class="beam-scan absolute top-1/2 -translate-y-1/2 left-0 w-48 h-[2px] bg-gradient-to-r from-transparent via-[#38bdf8] to-transparent"></div>
+        <!-- Glow Blur Neon di sekitarnya -->
+        <div class="beam-scan absolute top-1/2 -translate-y-1/2 left-0 w-40 h-[6px] bg-gradient-to-r from-transparent via-[#38bdf8] to-transparent blur-[3px] opacity-80"></div>
       </div>
     </div>
 
@@ -292,13 +297,14 @@
     </section>
 
     <!-- Container Garis Scanning Beam (Before Featured Projects) -->
-    <div class="relative w-full max-w-5xl mx-auto my-8 sm:my-14 px-4" aria-hidden="true">
-      <!-- Garis Dasar Slate Gelap -->
-      <div class="relative w-full h-[1px] bg-[#1e293b] overflow-hidden">
-        <!-- Laser Beam Terang Meluncur (Ice Cyan / Sky) -->
-        <div class="beam-scan beam-scan-delayed absolute inset-y-0 w-40 bg-gradient-to-r from-transparent via-[#38bdf8] to-transparent"></div>
-        <!-- Glow Blur di sekitarnya biar berasa neon -->
-        <div class="beam-scan beam-scan-delayed absolute inset-y-0 w-32 bg-gradient-to-r from-transparent via-[#38bdf8]/80 to-transparent blur-sm"></div>
+    <div class="relative w-full max-w-5xl mx-auto my-10 sm:my-14 px-4 overflow-hidden" aria-hidden="true">
+      <div class="relative w-full py-3">
+        <!-- Garis Dasar Slate Gelap -->
+        <div class="w-full h-[1px] bg-[#1e293b]"></div>
+        <!-- Laser Beam Terang Meluncur (Sky Blue #38bdf8) -->
+        <div class="beam-scan beam-scan-delayed absolute top-1/2 -translate-y-1/2 left-0 w-48 h-[2px] bg-gradient-to-r from-transparent via-[#38bdf8] to-transparent"></div>
+        <!-- Glow Blur Neon di sekitarnya -->
+        <div class="beam-scan beam-scan-delayed absolute top-1/2 -translate-y-1/2 left-0 w-40 h-[6px] bg-gradient-to-r from-transparent via-[#38bdf8] to-transparent blur-[3px] opacity-80"></div>
       </div>
     </div>
 
