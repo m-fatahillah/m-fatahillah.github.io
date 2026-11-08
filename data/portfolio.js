@@ -22,7 +22,7 @@ window.PORTFOLIO_DATA = {
     linkedinUrl: "https://linkedin.com/in/m-fatahillah",
     resumeUrl: "#",
     metrics: [
-      { value: "Sign.L", label: "Active ML Mobile Capstone" },
+      { value: "Sign.L", label: "Active Mobile ML" },
       { value: "Lab IVSS", label: "Backend Developer" },
       { value: "Koze-Kost", label: "Full-Stack Web" }
     ],
@@ -32,8 +32,7 @@ window.PORTFOLIO_DATA = {
       output: [
         "PBL-S5-Sign.L       [ACTIVE • Flutter • TFLite • Real-Time Camera • Gamification]",
         "pbl-lab-ivss        [Backend Dev • PHP 8.2 • PostgreSQL • Docker • AI Vector Search]",
-        "koze-kost-project   [Full-Stack • Vue 3 • Inertia.js • Laravel • Leaflet Maps]",
-        "cleanarch-mobile    [Flutter • Riverpod DI • SOLID • Firebase FCM • Offline-First]"
+        "koze-kost-project   [Full-Stack • Vue 3 • Inertia.js • Laravel • Leaflet Maps]"
       ]
     }
   },
@@ -50,7 +49,7 @@ window.PORTFOLIO_DATA = {
   marqueeTech: [
     "Flutter", "Dart", "TensorFlow Lite", "PHP 8.2", "Laravel", 
     "Vue.js 3", "Inertia.js", "PostgreSQL", "Docker", "Nginx", 
-    "Leaflet Maps", "Riverpod", "Python", "Scikit-Learn", "Git"
+    "Leaflet Maps", "Provider", "Python", "Scikit-Learn", "Git"
   ],
 
   about: {
@@ -74,7 +73,7 @@ window.PORTFOLIO_DATA = {
         id: "mobile-ml",
         title: "Mobile & On-Device ML",
         description: "Developing cross-platform Flutter applications powered by on-device TensorFlow Lite models and real-time camera inference.",
-        tags: ["Flutter", "Dart", "tflite_flutter", "Camera Stream", "Provider (Modified MVC)", "Lottie Gamification", "Riverpod"]
+        tags: ["Flutter", "Dart", "tflite_flutter", "Camera Stream", "Provider (Modified MVC)", "Lottie Gamification"]
       },
       {
         id: "backend",
@@ -140,18 +139,6 @@ window.PORTFOLIO_DATA = {
           "Built full facility management (CRUD) integration and property exploration features.",
           "Integrated Leaflet geospatial maps for location-based accommodation discovery."
         ]
-      },
-      {
-        period: "2024 — 2025",
-        role: "Mobile Software Engineer — Clean Architecture",
-        organization: "Mobile Systems Engineering, POLINEMA",
-        location: "Malang, East Java",
-        summary: "Engineered scalable multiplatform Flutter applications structured under strict SOLID principles and decoupled layer separation.",
-        points: [
-          "Developed Feature-First 3-layer Clean Architecture (Domain, Data, Presentation) with Riverpod DI.",
-          "Implemented push notification pipelines with Firebase Cloud Messaging (FCM) and token management.",
-          "Conducted unit testing and widget testing verification across independent state layers."
-        ]
       }
     ]
   },
@@ -193,17 +180,6 @@ window.PORTFOLIO_DATA = {
         tags: ["Vue.js 3", "Laravel 11", "Inertia.js", "Leaflet Maps", "Tailwind CSS v4", "Docker", "Zod"],
         codeUrl: "https://github.com/m-fatahillah/koze-kost-project",
         demoUrl: "https://github.com/m-fatahillah/koze-kost-project"
-      },
-      {
-        id: "cleanarch-mobile",
-        title: "CleanArch Mobile — Enterprise Mobile Suite",
-        badge: "FLUTTER • CLEAN ARCHITECTURE",
-        tagline: "Feature-First Architecture with SOLID Principles, Riverpod DI & FCM",
-        description: "Production-ready cross-platform mobile architecture built with Flutter & Dart under strict SOLID principles. Implements a decoupled 3-tier architecture (Domain, Data, Presentation), centralized Riverpod dependency injection, Firebase Cloud Messaging (FCM) notifications, offline-first local persistence, and unit/widget test coverage.",
-        metrics: "SOLID Principles • Riverpod DI • Unit & Widget Tested",
-        tags: ["Flutter", "Dart", "Riverpod", "Clean Architecture", "Firebase FCM", "Offline-First"],
-        codeUrl: "https://github.com/m-fatahillah/244107020121-mobile-course",
-        demoUrl: "https://github.com/m-fatahillah/244107020121-mobile-course"
       }
     ]
   },
