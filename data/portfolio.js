@@ -1,7 +1,7 @@
 /**
  * PORTFOLIO DATA CONFIGURATION
- * Real projects curated from https://github.com/m-fatahillah and team collaborations.
- * Authentic engineering credentials • Polinema Informatics Engineering
+ * Verified production repositories from https://github.com/m-fatahillah and team capstones.
+ * M. Fatahillah Athabrani • Informatics Engineering, Politeknik Negeri Malang (POLINEMA)
  */
 window.PORTFOLIO_DATA = {
   profile: {
@@ -10,30 +10,30 @@ window.PORTFOLIO_DATA = {
     badge: "Available for 2026 Opportunities",
     headlinePrefix: "Hey, I'm",
     typewriterRoles: [
+      "Sign.L (Flutter & TensorFlow Lite)",
       "Backend Systems (Lab IVSS)",
       "Full-Stack Web (Vue 3 & Laravel)",
-      "Flutter Clean Architecture",
-      "AI Vector Search & Pipelines"
+      "Interactive Geospatial GIS (Koze-Kost)"
     ],
-    bio: "Informatics Engineering student at State Polytechnic of Malang (POLINEMA). Backend Developer on the Intelligent Vision & Smart System (IVSS) Lab platform and full-stack developer on Koze-Kost — specializing in scalable database architectures, AI-integrated workflows, and Clean Architecture mobile apps.",
+    bio: "Informatics Engineering student at State Polytechnic of Malang (POLINEMA). Currently co-engineering Sign.L (an on-device ML sign language learning platform), the IVSS Lab management system as a Backend Developer, and the Koze-Kost discovery web app — passionate about real-world software craft.",
     location: "Malang, Indonesia (WIB • UTC+7)",
     email: "fatahcrown789@gmail.com",
     githubUrl: "https://github.com/m-fatahillah",
     linkedinUrl: "https://linkedin.com/in/m-fatahillah",
     resumeUrl: "#",
     metrics: [
+      { value: "Sign.L", label: "Active ML Mobile Capstone" },
       { value: "Lab IVSS", label: "Backend Developer" },
-      { value: "Koze-Kost", label: "Full-Stack Web" },
-      { value: "CleanArch", label: "Flutter Mobile" }
+      { value: "Koze-Kost", label: "Full-Stack Web" }
     ],
     terminalPreview: {
       user: "fatahillah@polinema-node",
-      cmd: "fatahillah --list-projects --production",
+      cmd: "fatahillah --status --active-projects",
       output: [
+        "PBL-S5-Sign.L       [ACTIVE • Flutter • TFLite • Real-Time Camera • Gamification]",
         "pbl-lab-ivss        [Backend Dev • PHP 8.2 • PostgreSQL • Docker • AI Vector Search]",
         "koze-kost-project   [Full-Stack • Vue 3 • Inertia.js • Laravel • Leaflet Maps]",
-        "cleanarch-mobile    [Flutter • Riverpod DI • SOLID • Firebase FCM • Offline-First]",
-        "creditcluster-ai    [Python • Scikit-Learn • K-Means • DBSCAN • Silhouette Validated]"
+        "cleanarch-mobile    [Flutter • Riverpod DI • SOLID • Firebase FCM • Offline-First]"
       ]
     }
   },
@@ -48,28 +48,34 @@ window.PORTFOLIO_DATA = {
   ],
 
   marqueeTech: [
-    "PHP 8.2", "PostgreSQL", "Laravel", "Vue.js 3", "Inertia.js", 
-    "Docker", "Nginx", "Flutter", "Dart", "Riverpod", 
-    "Python", "OpenCV", "Scikit-Learn", "Leaflet Maps", "Git"
+    "Flutter", "Dart", "TensorFlow Lite", "PHP 8.2", "Laravel", 
+    "Vue.js 3", "Inertia.js", "PostgreSQL", "Docker", "Nginx", 
+    "Leaflet Maps", "Riverpod", "Python", "Scikit-Learn", "Git"
   ],
 
   about: {
     sectionNum: "01 / ABOUT ME",
-    heading: "Backend Engineering & Multiplatform Systems",
-    quote: "Building reliable backend services, AI-augmented management platforms, and clean-architecture mobile software.",
-    body: "I am an Informatics Engineering student at State Polytechnic of Malang (POLINEMA) with proven experience as a Backend Developer on enterprise-grade academic platforms. My core competence spans designing scalable relational schemas in PostgreSQL, building authenticated multi-role APIs, containerizing stacks with Docker & Nginx, and engineering responsive mobile apps adhering strictly to SOLID Clean Architecture.",
+    heading: "Engineering Intelligent & Scalable Multiplatform Systems",
+    quote: "Building real-time on-device ML mobile apps, robust backend services, and geospatial web platforms.",
+    body: "I am an Informatics Engineering student at State Polytechnic of Malang (POLINEMA). My active engineering focus centers on building Sign.L (an on-device TensorFlow Lite computer vision learning app in Flutter), architecting relational PostgreSQL backend services for the IVSS Laboratory platform, and developing modern full-stack web applications with Vue 3 and Laravel.",
     highlights: [
-      { title: "Backend & Systems Architecture", desc: "Engineered core database schemas, RBAC multi-role auth, and API integrations for Lab IVSS." },
-      { title: "Full-Stack Web & GIS", desc: "Vue 3, Inertia.js, and Laravel backends with interactive Leaflet mapping in Koze-Kost." },
-      { title: "Mobile Clean Architecture", desc: "Feature-First 3-layer mobile design with Riverpod DI, FCM, and offline caching in Flutter." }
+      { title: "Mobile & Edge ML (Sign.L)", desc: "Integrating tflite_flutter, real-time camera processing, and Duolingo-style gamification." },
+      { title: "Backend Architecture (Lab IVSS)", desc: "PostgreSQL schemas, RBAC multi-role authorization, and Dockerized Nginx services." },
+      { title: "Full-Stack & GIS (Koze-Kost)", desc: "Vue 3, Inertia.js, and Laravel backends with interactive Leaflet geospatial mapping." }
     ]
   },
 
   expertise: {
     sectionNum: "02 / EXPERTISE",
     heading: "Core Competence & Technical Stack",
-    subheading: "Verified technologies actively used in production systems and enterprise laboratory platforms.",
+    subheading: "Verified technologies actively deployed in live capstone projects and production environments.",
     categories: [
+      {
+        id: "mobile-ml",
+        title: "Mobile & On-Device ML",
+        description: "Developing cross-platform Flutter applications powered by on-device TensorFlow Lite models and real-time camera inference.",
+        tags: ["Flutter", "Dart", "tflite_flutter", "Camera Stream", "Provider (Modified MVC)", "Lottie Gamification", "Riverpod"]
+      },
       {
         id: "backend",
         title: "Backend & Database Engineering",
@@ -77,31 +83,38 @@ window.PORTFOLIO_DATA = {
         tags: ["PHP 8.2", "PostgreSQL", "Laravel 11", "MySQL", "RBAC Security", "REST APIs", "OpenAI Embeddings"]
       },
       {
-        id: "web",
+        id: "web-gis",
         title: "Full-Stack Web & GIS",
         description: "Developing modern reactive single-page applications with Inertia.js, Vue 3, and interactive geospatial mapping.",
         tags: ["Vue.js 3", "Inertia.js", "Tailwind CSS v4", "Leaflet Maps", "Zod", "Vite"]
       },
       {
-        id: "mobile",
-        title: "Mobile App Architecture",
-        description: "Structuring scalable multiplatform Flutter applications with decoupled business logic and centralized DI.",
-        tags: ["Flutter", "Dart", "Clean Architecture", "Riverpod DI", "Firebase FCM", "Offline Storage"]
-      },
-      {
-        id: "devops-ai",
-        title: "DevOps & Machine Learning",
-        description: "Managing containerized deployments, automated testing suites, and unsupervised clustering algorithms.",
-        tags: ["Docker", "Docker Compose", "Nginx", "Git & GitHub", "Python", "Scikit-Learn", "PHPUnit"]
+        id: "devops-tools",
+        title: "DevOps & Engineering Tools",
+        description: "Ensuring containerized reproducibility, automated unit testing, and collaborative git workflow hygiene.",
+        tags: ["Docker", "Docker Compose", "Nginx", "Git & GitHub", "PHPUnit", "Postman", "Linux / Bash"]
       }
     ]
   },
 
   timeline: {
     sectionNum: "03 / TIMELINE",
-    heading: "Engineering Milestones & Project Delivery",
-    subheading: "A timeline of delivered software platforms, laboratory systems, and team collaborations.",
+    heading: "Engineering Milestones & Active Capstones",
+    subheading: "A timeline of delivered software platforms, laboratory systems, and active team collaborations.",
     items: [
+      {
+        period: "2025 — Present (Active)",
+        role: "Mobile Software Developer — Sign.L Project",
+        organization: "PBL Semester 5 Capstone, POLINEMA",
+        location: "Malang, East Java",
+        summary: "Co-developing an interactive sign language learning mobile application featuring on-device TensorFlow Lite gesture classification and gamification.",
+        points: [
+          "Engineered user authentication, registration, password recovery, and secure credential handling flows in Flutter.",
+          "Implemented Modified MVC architecture (Thin Controller + Service Layer) using Provider for decoupled state management.",
+          "Integrated camera preprocessing pipelines with tflite_flutter for low-latency on-device gesture recognition.",
+          "Constructed engaging gamification loops with Lottie animations, celebratory confetti feedbacks, and level progress tracking."
+        ]
+      },
       {
         period: "2025 — Present",
         role: "Backend Developer — Lab IVSS Information System",
@@ -146,8 +159,19 @@ window.PORTFOLIO_DATA = {
   showcase: {
     sectionNum: "04 / SHOWCASE",
     heading: "Featured Engineering Projects",
-    subheading: "Production platforms and standalone repositories — click 'Repository Source' to explore the code.",
+    subheading: "Active production capstones and standalone repositories — click 'Repository Source' to explore the code.",
     projects: [
+      {
+        id: "pbl-s5-signl",
+        title: "Sign.L — Interactive Sign Language ML Learning",
+        badge: "ACTIVE CAPSTONE • FLUTTER + TFLITE + GAMIFICATION",
+        tagline: "Duolingo-Style Mobile App with On-Device Camera Gesture Inference",
+        description: "An interactive mobile application designed to gamify sign language learning. Utilizes on-device TensorFlow Lite inference and real-time camera streams to validate user hand gestures with zero cloud latency. Structured under a Modified MVC architecture (Thin Controller + Service Layer) via Provider, featuring interactive Lottie feedback animations, XP progression, and secure authentication flows.",
+        metrics: "On-Device TFLite Inference • Modified MVC • Lottie Gamification",
+        tags: ["Flutter", "Dart", "tflite_flutter", "Camera Stream", "Provider", "Lottie", "Gamification"],
+        codeUrl: "https://github.com/furalmiqbadi/PBL-S5-Sign.L",
+        demoUrl: "https://github.com/furalmiqbadi/PBL-S5-Sign.L"
+      },
       {
         id: "pbl-lab-ivss",
         title: "Sistem Informasi Laboratorium IVSS",
@@ -180,17 +204,6 @@ window.PORTFOLIO_DATA = {
         tags: ["Flutter", "Dart", "Riverpod", "Clean Architecture", "Firebase FCM", "Offline-First"],
         codeUrl: "https://github.com/m-fatahillah/244107020121-mobile-course",
         demoUrl: "https://github.com/m-fatahillah/244107020121-mobile-course"
-      },
-      {
-        id: "creditcluster-ml",
-        title: "CreditCluster — Customer Behavioral Segmentation",
-        badge: "MACHINE LEARNING • UNSUPERVISED",
-        tagline: "Credit Card Analytics via K-Means, DBSCAN & Agglomerative Models",
-        description: "An unsupervised machine learning research pipeline analyzing financial customer credit card behavioral patterns. Implements and compares K-Means, DBSCAN (with Elbow Method parameter optimization), and Agglomerative Hierarchical Clustering, evaluated through Silhouette Scores and Davies-Bouldin Index (DBI) metrics.",
-        metrics: "Silhouette Score & DBI Validated • Multi-Model Evaluation",
-        tags: ["Python", "Scikit-Learn", "K-Means", "DBSCAN", "Pandas", "Matplotlib"],
-        codeUrl: "https://github.com/m-fatahillah/Machine-Learning-M.Fatahillah-Athabrani-244107020121",
-        demoUrl: "https://github.com/m-fatahillah/Machine-Learning-M.Fatahillah-Athabrani-244107020121"
       }
     ]
   },
