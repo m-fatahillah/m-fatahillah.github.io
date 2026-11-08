@@ -127,6 +127,28 @@
       50% { opacity: 0; }
     }
 
+    /* Horizontal Scanning Laser Beam (Jonito.dev style) */
+    @keyframes laserScan {
+      0% {
+        transform: translateX(-100%);
+      }
+      100% {
+        transform: translateX(200%);
+      }
+    }
+
+    .laser-beam {
+      animation: laserScan 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+      will-change: transform;
+      filter: drop-shadow(0 0 6px rgba(141, 164, 184, 0.7));
+    }
+
+    .laser-beam-delayed {
+      animation: laserScan 4s cubic-bezier(0.4, 0, 0.2, 1) 2s infinite;
+      will-change: transform;
+      filter: drop-shadow(0 0 6px rgba(141, 164, 184, 0.7));
+    }
+
     /* Tooltip Transition */
     .tooltip-fade {
       transition: opacity 200ms ease, transform 200ms ease;
@@ -237,6 +259,11 @@
       </div>
     </section>
 
+    <!-- ==================== HORIZONTAL LASER BEAM (UNDER HERO) ==================== -->
+    <div class="relative w-full h-[1px] bg-[#26303d] overflow-hidden -my-4 sm:-my-6" aria-hidden="true">
+      <div class="laser-beam absolute inset-y-0 left-0 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-[#8da4b8] to-transparent"></div>
+    </div>
+
     <!-- ==================== 3. CORE TECH STACK & TOOLS ==================== -->
     <section id="skills" class="scroll-mt-28 space-y-8">
       
@@ -259,6 +286,11 @@
         <!-- Rendered by JS -->
       </div>
     </section>
+
+    <!-- ==================== HORIZONTAL LASER BEAM (BEFORE FEATURED PROJECTS) ==================== -->
+    <div class="relative w-full h-[1px] bg-[#26303d] overflow-hidden -my-4 sm:-my-6" aria-hidden="true">
+      <div class="laser-beam-delayed absolute inset-y-0 left-0 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-[#8da4b8] to-transparent"></div>
+    </div>
 
     <!-- ==================== 4. FEATURED PROJECTS ==================== -->
     <section id="projects" class="scroll-mt-28 space-y-8">
