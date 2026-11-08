@@ -1,7 +1,7 @@
 /**
  * PORTFOLIO DATA CONFIGURATION
- * Real projects scanned directly from https://github.com/m-fatahillah
- * Authentic engineering credentials • Polinema Informatics Engineering
+ * Real projects curated from https://github.com/m-fatahillah
+ * Featuring standalone software engineering projects & architectures.
  */
 window.PORTFOLIO_DATA = {
   profile: {
@@ -10,30 +10,30 @@ window.PORTFOLIO_DATA = {
     badge: "Available for 2026 Opportunities",
     headlinePrefix: "Hey, I'm",
     typewriterRoles: [
+      "Full-Stack Web (Vue 3 & Laravel)",
       "Flutter Clean Architecture",
-      "Laravel RESTful APIs",
-      "Machine Learning Pipelines",
-      "Computer Vision with OpenCV"
+      "Interactive Geospatial Maps",
+      "Machine Learning & Vision Pipelines"
     ],
-    bio: "Informatics Engineering student at State Polytechnic of Malang (POLINEMA). Specializing in mobile engineering with Clean Architecture, modular Laravel backend services, unsupervised machine learning pipelines, and digital image processing with OpenCV.",
+    bio: "Software Engineer based in Indonesia. Specializing in modern full-stack web platforms with Vue 3 and Laravel, Clean Architecture mobile applications in Flutter, and analytical machine learning pipelines — focused on delivering resilient, user-centric digital products.",
     location: "Malang, Indonesia (WIB • UTC+7)",
     email: "fatahcrown789@gmail.com",
     githubUrl: "https://github.com/m-fatahillah",
     linkedinUrl: "https://linkedin.com/in/m-fatahillah",
     resumeUrl: "#",
     metrics: [
-      { value: "33+", label: "GitHub Repositories" },
-      { value: "4+", label: "Core Tech Disciplines" },
-      { value: "POLINEMA", label: "Informatics Major" }
+      { value: "Koze-Kost", label: "Flagship Web App" },
+      { value: "4+", label: "Core Architectures" },
+      { value: "Full-Stack", label: "Web & Mobile Focus" }
     ],
     terminalPreview: {
-      user: "fatahillah@polinema-node",
-      cmd: "gh repo list m-fatahillah --visibility public",
+      user: "fatahillah@dev-node",
+      cmd: "fatahillah --list-projects --featured",
       output: [
-        "244107020121-mobile-course [Flutter Clean Architecture • SOLID • Riverpod]",
-        "PraktikumPWL              [Laravel 10 • Sanctum REST API • PHPUnit]",
-        "Machine-Learning-...      [K-Means • DBSCAN • Agglomerative Clustering]",
-        "PCVK26_15_FATAH           [OpenCV • CDF Histogram • Image Processing]"
+        "koze-kost-project   [Vue 3 • Inertia.js • Laravel • Leaflet Maps • AI Chat]",
+        "cleanarch-mobile    [Flutter • Riverpod DI • SOLID • Firebase FCM • Offline-First]",
+        "creditcluster-ai    [Scikit-Learn • K-Means • DBSCAN • Silhouette Validated]",
+        "visionfilter-cv     [OpenCV • Spatial Convolutions • Normalized CDF Histograms]"
       ]
     }
   },
@@ -48,82 +48,83 @@ window.PORTFOLIO_DATA = {
   ],
 
   marqueeTech: [
-    "Flutter", "Dart", "Laravel", "PHP 8.x", "Python", 
-    "OpenCV", "Scikit-Learn", "PostgreSQL", "MySQL", 
-    "Riverpod", "Clean Architecture", "Docker", "Git", "Linux"
+    "Vue.js 3", "Inertia.js", "Laravel", "Leaflet Maps", "Flutter", 
+    "Dart", "Riverpod", "Python", "OpenCV", "Scikit-Learn", 
+    "Tailwind CSS", "MySQL", "PostgreSQL", "Docker", "Git"
   ],
 
   about: {
     sectionNum: "01 / ABOUT ME",
-    heading: "Informatics Engineering & Multiplatform Systems",
-    quote: "Building clean-architecture mobile software, modular backend APIs, and analytical machine learning pipelines.",
-    body: "I am an Informatics Engineering student at State Polytechnic of Malang (POLINEMA) focusing on software engineering principles. My work revolves around implementing SOLID-driven Clean Architecture in Flutter, engineering secure REST APIs in Laravel, exploring unsupervised machine learning clustering, and developing image processing pipelines using OpenCV and Python.",
+    heading: "Engineering High-Impact Digital Solutions",
+    quote: "Blending modern full-stack web development with clean-architecture mobile systems and machine learning pipelines.",
+    body: "I am a Software Engineer dedicated to crafting robust digital products. My core focus lies in modern full-stack development using Vue 3 and Laravel (Inertia.js stack), building mobile apps adhering strictly to SOLID Clean Architecture principles in Flutter, and developing analytical computer vision and machine learning models in Python.",
     highlights: [
-      { title: "Mobile Clean Architecture", desc: "Feature-First structure with Domain, Data, Presentation layers and Riverpod DI." },
-      { title: "Backend & API Security", desc: "Relational database schema modeling, Sanctum token authentication, and PHPUnit." },
-      { title: "ML & Computer Vision", desc: "Clustering algorithms (K-Means, DBSCAN) and OpenCV image processing pipelines." }
+      { title: "Full-Stack Web Engineering", desc: "Vue 3, Inertia.js, and Laravel backends with interactive Leaflet mapping." },
+      { title: "Mobile Clean Architecture", desc: "Feature-First 3-layer mobile design with Riverpod DI, FCM, and offline caching." },
+      { title: "Data & Computer Vision", desc: "Unsupervised customer credit clustering and mathematical OpenCV image processing." }
     ]
   },
 
   expertise: {
     sectionNum: "02 / EXPERTISE",
     heading: "Core Competence & Technical Stack",
-    subheading: "Verified technologies actively used in my GitHub repositories and academic capstones.",
+    subheading: "A verified toolkit applied directly across production-ready web platforms and mobile architectures.",
     categories: [
       {
+        id: "web",
+        title: "Full-Stack Web Development",
+        description: "Building responsive, reactive single-page applications and secure API backends.",
+        tags: ["Vue.js 3", "Inertia.js", "Laravel 11", "Tailwind CSS v4", "Leaflet Maps", "Zod", "REST APIs"]
+      },
+      {
         id: "mobile",
-        title: "Mobile App Development",
-        description: "Designing enterprise mobile architectures using Flutter & Dart with strict separation of concerns.",
-        tags: ["Flutter", "Dart", "Clean Architecture", "Riverpod", "Firebase FCM", "Offline-First Storage"]
+        title: "Mobile App Architecture",
+        description: "Structuring scalable multiplatform Flutter applications with decoupled business logic.",
+        tags: ["Flutter", "Dart", "Clean Architecture", "Riverpod DI", "Firebase FCM", "Offline Storage"]
       },
       {
-        id: "backend",
-        title: "Backend & RESTful APIs",
-        description: "Structuring scalable server-side systems, relational database models, and token-based authentication.",
-        tags: ["Laravel", "PHP 8.x", "Sanctum Auth", "MySQL", "PostgreSQL", "Postman Collections"]
-      },
-      {
-        id: "ml-cv",
+        id: "ai-vision",
         title: "Machine Learning & Vision",
-        description: "Building clustering models and executing digital image processing algorithms on image datasets.",
-        tags: ["Python", "OpenCV", "Scikit-Learn", "NumPy", "Pandas", "Matplotlib", "Jupyter"]
+        description: "Implementing clustering models and performing digital image processing algorithms.",
+        tags: ["Python", "Scikit-Learn", "OpenCV", "NumPy", "Pandas", "Matplotlib", "Jupyter"]
       },
       {
-        id: "tools",
-        title: "Engineering Tools & QA",
-        description: "Applying version control hygiene, automated unit testing, and containerized development.",
-        tags: ["Git & GitHub", "PHPUnit", "Widget Testing", "Docker", "Linux / Bash", "Vite"]
+        id: "devops-tools",
+        title: "DevOps & Engineering Tools",
+        description: "Ensuring containerized reproducibility, rigorous testing suites, and git workflow hygiene.",
+        tags: ["Docker", "Docker Compose", "Git & GitHub", "PHPUnit", "Postman", "Linux / Bash"]
       }
     ]
   },
 
   timeline: {
     sectionNum: "03 / TIMELINE",
-    heading: "Academic Roadmap & Technical Milestones",
-    subheading: "Continuous engineering progression and repository development at POLINEMA.",
+    heading: "Engineering Milestones & Project Delivery",
+    subheading: "A timeline of delivered software platforms, architectural designs, and team collaborations.",
     items: [
       {
         period: "2025 — Present",
-        role: "Informatics Engineering Student & Mobile Developer",
-        organization: "State Polytechnic of Malang (POLINEMA)",
+        role: "Full-Stack Developer — Koze-Kost Project",
+        organization: "Koze-Kost Engineering Team",
         location: "Malang, East Java",
-        summary: "Advanced coursework in Mobile App Engineering, Computer Vision, and Machine Learning.",
+        summary: "Co-developed an all-in-one boarding house discovery and management platform utilizing Vue 3, Inertia.js, Laravel, and Leaflet interactive maps.",
         points: [
-          "Implemented 3-layer Clean Architecture (Feature-First) with centralized Riverpod Dependency Injection.",
-          "Integrated Firebase Cloud Messaging (FCM), token security, and local offline-first database persistence.",
-          "Constructed digital image enhancement pipelines and multi-channel histogram equalizations in OpenCV."
+          "Architected and styled the responsive Landing Page and dynamic FAQ showcase module.",
+          "Implemented email-configured password recovery and secure authentication notification flows.",
+          "Built full facility management (CRUD) integration and property exploration features.",
+          "Integrated Leaflet geospatial maps for location-based accommodation discovery."
         ]
       },
       {
         period: "2024 — 2025",
-        role: "Web & Database Systems Engineer",
-        organization: "State Polytechnic of Malang (POLINEMA)",
+        role: "Mobile Software Engineer — Clean Architecture",
+        organization: "Mobile Systems Engineering",
         location: "Malang, East Java",
-        summary: "Engineered web architectures, relational database management systems, and automated test pipelines.",
+        summary: "Engineered scalable multiplatform Flutter applications structured under strict SOLID principles and decoupled layer separation.",
         points: [
-          "Developed full-stack web applications and authenticated REST APIs using Laravel with Sanctum tokens.",
-          "Designed normalized database schemas, relational migrations, and SQL optimizations for business entities.",
-          "Conducted automated test assertions with PHPUnit and documented API endpoints in Postman collections."
+          "Developed Feature-First 3-layer Clean Architecture (Domain, Data, Presentation) with Riverpod DI.",
+          "Implemented push notification pipelines with Firebase Cloud Messaging (FCM) and token management.",
+          "Conducted unit testing and widget testing verification across independent state layers."
         ]
       }
     ]
@@ -131,50 +132,50 @@ window.PORTFOLIO_DATA = {
 
   showcase: {
     sectionNum: "04 / SHOWCASE",
-    heading: "Engineered Projects & GitHub Repositories",
-    subheading: "Real projects scanned directly from my GitHub — click 'Repository Source' to inspect the code.",
+    heading: "Featured Engineering Projects",
+    subheading: "Standalone projects scanned directly from my GitHub — click 'Repository Source' to explore the code.",
     projects: [
       {
-        id: "mobile-clean-architecture",
-        title: "Mobile Course — Clean Architecture & Mobile Systems",
+        id: "koze-kost",
+        title: "Koze-Kost — Smart Property & Boarding Platform",
+        badge: "FEATURED • VUE 3 + LARAVEL + LEAFLET",
+        tagline: "All-in-One Boarding House Discovery with AI Chat & Geospatial Maps",
+        description: "A modern full-stack accommodation portal connecting boarding house seekers, property owners, and administrators. Powered by Vue.js 3 (Inertia.js), Laravel backend, Tailwind CSS v4, and Leaflet interactive map rendering. Features AI chat accommodations recommendations, real-time owner-seeker communication, facility management, and password recovery workflows.",
+        metrics: "Interactive Leaflet Maps • AI Chatbot Assistant • Inertia.js Stack",
+        tags: ["Vue.js 3", "Laravel 11", "Inertia.js", "Leaflet Maps", "Tailwind CSS v4", "Docker", "Zod"],
+        codeUrl: "https://github.com/m-fatahillah/koze-kost-project",
+        demoUrl: "https://github.com/m-fatahillah/koze-kost-project"
+      },
+      {
+        id: "cleanarch-mobile",
+        title: "CleanArch Mobile — Enterprise Mobile Suite",
         badge: "FLUTTER • CLEAN ARCHITECTURE",
-        tagline: "Feature-First Flutter Engineering with SOLID Principles & Riverpod DI",
-        description: "A comprehensive Flutter engineering repository demonstrating production-ready Clean Architecture (Domain, Data, Presentation layers), SOLID principles, Riverpod centralized dependency injection, Firebase Cloud Messaging (FCM), secure local storage, and automated unit/widget test suites.",
+        tagline: "Feature-First Architecture with SOLID Principles, Riverpod DI & FCM",
+        description: "Production-ready cross-platform mobile architecture built with Flutter & Dart under strict SOLID principles. Implements a decoupled 3-tier architecture (Domain, Data, Presentation), centralized Riverpod dependency injection, Firebase Cloud Messaging (FCM) notifications, offline-first local persistence, and unit/widget test coverage.",
         metrics: "SOLID Principles • Riverpod DI • Unit & Widget Tested",
-        tags: ["Flutter", "Dart", "Riverpod", "Clean Architecture", "FCM", "SQLite / Hive"],
+        tags: ["Flutter", "Dart", "Riverpod", "Clean Architecture", "Firebase FCM", "Offline-First"],
         codeUrl: "https://github.com/m-fatahillah/244107020121-mobile-course",
         demoUrl: "https://github.com/m-fatahillah/244107020121-mobile-course"
       },
       {
-        id: "praktikum-pwl",
-        title: "PraktikumPWL — Enterprise Laravel & REST API",
-        badge: "LARAVEL 10 • SANCTUM API",
-        tagline: "Modular Backend with Token Authentication, Postman Specs & PHPUnit",
-        description: "Full-stack Laravel web application and RESTful API backend. Features relational database migrations across multiple entities (Users, Products, Posts, Categories, Todos), token-based Laravel Sanctum authentication, Postman API collections, and automated test verification via PHPUnit.",
-        metrics: "Sanctum Auth • Postman Collection • PHPUnit Test Suite",
-        tags: ["Laravel", "PHP 8.x", "Sanctum API", "MySQL", "Tailwind CSS", "PHPUnit"],
-        codeUrl: "https://github.com/m-fatahillah/PraktikumPWL",
-        demoUrl: "https://github.com/m-fatahillah/PraktikumPWL"
-      },
-      {
-        id: "ml-customer-clustering",
-        title: "Customer Credit Segmentation & Unsupervised ML",
-        badge: "SCIKIT-LEARN • CLUSTERING",
-        tagline: "Credit Card Analytics using K-Means, DBSCAN & Agglomerative Models",
-        description: "An unsupervised machine learning research repository exploring customer credit card behavioral segmentation. Implements K-Means, DBSCAN (with Elbow Method parameter optimization), and Agglomerative Hierarchical Clustering, evaluated through Silhouette Scores and Davies-Bouldin Index (DBI).",
-        metrics: "Silhouette Score & DBI Evaluated • DBSCAN & K-Means",
+        id: "creditcluster-ml",
+        title: "CreditCluster — Customer Behavioral Segmentation",
+        badge: "MACHINE LEARNING • UNSUPERVISED",
+        tagline: "Credit Card Analytics via K-Means, DBSCAN & Agglomerative Models",
+        description: "An unsupervised machine learning research pipeline analyzing financial customer credit card behavioral patterns. Implements and compares K-Means, DBSCAN (with Elbow Method parameter optimization), and Agglomerative Hierarchical Clustering, evaluated through Silhouette Scores and Davies-Bouldin Index (DBI) metrics.",
+        metrics: "Silhouette Score & DBI Validated • Multi-Model Evaluation",
         tags: ["Python", "Scikit-Learn", "K-Means", "DBSCAN", "Pandas", "Matplotlib"],
         codeUrl: "https://github.com/m-fatahillah/Machine-Learning-M.Fatahillah-Athabrani-244107020121",
         demoUrl: "https://github.com/m-fatahillah/Machine-Learning-M.Fatahillah-Athabrani-244107020121"
       },
       {
-        id: "pcvk-image-processing",
-        title: "PCVK — Computer Vision & Digital Image Processing",
-        badge: "OPENCV • PYTHON",
+        id: "visionfilter-pcvk",
+        title: "VisionFilter — Image Processing & Convolution Engine",
+        badge: "COMPUTER VISION • OPENCV",
         tagline: "Spatial Filtering, Cumulative Distribution Function & Histograms",
-        description: "Digital image processing and computer vision pipeline developed in Python using OpenCV and NumPy on Google Colab. Implements spatial filtering convolutions, multi-channel histogram equalizations, and normalized Cumulative Distribution Function (CDF) curve analysis on image datasets.",
-        metrics: "Zero-Difference Validation • Normalized CDF Analysis",
-        tags: ["Python", "OpenCV", "NumPy", "Computer Vision", "Google Colab", "Jupyter"],
+        description: "Computational computer vision and digital image processing pipeline built in Python with OpenCV and NumPy. Implements customized spatial convolutions, edge enhancement filters, multi-channel histogram equalizations, and normalized Cumulative Distribution Function (CDF) curve evaluations on image datasets.",
+        metrics: "Zero-Difference Validation • Normalized CDF Curves",
+        tags: ["Python", "OpenCV", "NumPy", "Computer Vision", "Google Colab"],
         codeUrl: "https://github.com/m-fatahillah/PCVK26_15_FATAH",
         demoUrl: "https://github.com/m-fatahillah/PCVK26_15_FATAH"
       }
@@ -183,9 +184,9 @@ window.PORTFOLIO_DATA = {
 
   contact: {
     sectionNum: "05 / CONTACT",
-    heading: "Let's Connect & Collaborate",
-    subheading: "Have an internship opportunity, an open-source collaboration, or an engineering project? Feel free to reach out.",
+    heading: "Let's Connect & Build",
+    subheading: "Have an opportunity, an engineering challenge, or a project to discuss? Feel free to reach out directly.",
     email: "fatahcrown789@gmail.com",
-    footerCopy: "© 2026 M. Fatahillah Athabrani. State Polytechnic of Malang. All Rights Reserved."
+    footerCopy: "© 2026 M. Fatahillah Athabrani. All Rights Reserved. Engineered with clean architecture & quiet aesthetics."
   }
 };
