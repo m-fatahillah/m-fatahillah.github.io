@@ -1,17 +1,28 @@
 <!DOCTYPE html>
-<html lang="id" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>M. Fatahillah — Software Engineer</title>
-  <meta name="description" content="Portfolio M. Fatahillah — Software Engineer dengan fokus pada backend systems, data pipelines, dan computer vision." />
+  <title>M. Fatahillah | Software Engineer & Intelligent Systems</title>
+  <meta name="description" content="Portfolio of M. Fatahillah — Software Engineer specializing in backend architectures, data pipelines, and computer vision." />
+  <meta name="author" content="M. Fatahillah" />
   <meta name="theme-color" content="#090d12" />
+  <link rel="canonical" href="https://m-fatahillah.github.io/" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://m-fatahillah.github.io/" />
+  <meta property="og:title" content="M. Fatahillah | Software Engineer & Intelligent Systems" />
+  <meta property="og:description" content="Software Engineer specializing in scalable backend architectures, automated data pipelines, and computer vision." />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="M. Fatahillah | Software Engineer & Intelligent Systems" />
+  <meta name="twitter:description" content="Software Engineer specializing in scalable backend architectures, automated data pipelines, and computer vision." />
 
   <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -19,7 +30,7 @@
   <!-- Lucide Icons CDN -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
-  <!-- Data Modular Configuration -->
+  <!-- Modular Portfolio Data -->
   <script src="data/portfolio.js"></script>
 
   <script>
@@ -35,23 +46,18 @@
             'xs': '480px',
           },
           colors: {
-            obsidian: {
-              950: '#070a0e',
-              900: '#090d12',
-              850: '#0e131b',
-              800: '#141b24',
-            },
-            surface: {
-              card: '#111722',
-              subtle: '#161e2c',
-              border: '#202b3a',
-              hover: '#29374a',
+            canvas: {
+              DEFAULT: '#090d12',
+              card: '#101620',
+              subtle: '#141c28',
+              border: '#1f2a3a',
+              hover: '#2a394e',
             },
             sierra: {
               DEFAULT: '#8da4b8',
-              muted: '#738a9e',
+              muted: '#6f869a',
               light: '#a9bccd',
-              dim: 'rgba(141, 164, 184, 0.12)',
+              dim: 'rgba(141, 164, 184, 0.1)',
             },
             chalk: {
               primary: '#f4f6f8',
@@ -73,53 +79,69 @@
       background: #090d12;
     }
     ::-webkit-scrollbar-thumb {
-      background: #202b3a;
+      background: #1f2a3a;
       border-radius: 9999px;
     }
     ::-webkit-scrollbar-thumb:hover {
-      background: #738a9e;
+      background: #6f869a;
     }
 
-    /* Subtle Natural Ambient Mesh */
-    .bg-canvas {
+    /* Ambient Subtle Glow */
+    .bg-mesh {
       background-color: #090d12;
       background-image: 
-        radial-gradient(circle at 50% 0%, rgba(141, 164, 184, 0.08) 0%, transparent 60%),
-        radial-gradient(circle at 90% 40%, rgba(115, 138, 158, 0.03) 0%, transparent 40%),
-        radial-gradient(circle at 10% 80%, rgba(141, 164, 184, 0.03) 0%, transparent 40%);
+        radial-gradient(circle at 50% 0%, rgba(141, 164, 184, 0.08) 0%, transparent 55%),
+        radial-gradient(circle at 100% 35%, rgba(111, 134, 154, 0.03) 0%, transparent 40%),
+        radial-gradient(circle at 0% 75%, rgba(141, 164, 184, 0.03) 0%, transparent 40%);
       background-attachment: fixed;
     }
 
-    /* Human-Crafted Subtle Card Transition */
-    .project-card, .skill-group, .timeline-item {
-      transition: transform 240ms cubic-bezier(0.16, 1, 0.3, 1), border-color 240ms ease, box-shadow 240ms ease;
+    /* Micro-interactions (GPU-accelerated) */
+    .bento-card {
+      transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1), border-color 220ms ease, box-shadow 220ms ease;
+      will-change: transform;
     }
-    .project-card:hover {
+    .bento-card:hover {
       transform: translateY(-3px);
       border-color: rgba(141, 164, 184, 0.4);
-      box-shadow: 0 16px 36px -12px rgba(0, 0, 0, 0.65), 0 0 20px -4px rgba(141, 164, 184, 0.15);
+      box-shadow: 0 16px 36px -12px rgba(0, 0, 0, 0.7), 0 0 18px -4px rgba(141, 164, 184, 0.15);
     }
 
-    /* Active Nav Highlight */
+    /* Active Scrollspy Nav */
     .nav-active {
       color: #f4f6f8 !important;
-      background-color: rgba(32, 43, 58, 0.8) !important;
+      background-color: rgba(31, 42, 58, 0.85) !important;
+    }
+
+    /* Typewriter Cursor */
+    .typewriter-cursor {
+      display: inline-block;
+      width: 2px;
+      height: 1.1em;
+      background-color: #8da4b8;
+      vertical-align: middle;
+      margin-left: 2px;
+      animation: blink 1s step-start infinite;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
     }
   </style>
 </head>
 
-<body class="bg-canvas text-chalk-secondary font-sans antialiased selection:bg-sierra/20 selection:text-chalk-primary min-h-screen relative overflow-x-hidden">
+<body class="bg-mesh text-chalk-secondary font-sans antialiased selection:bg-sierra/25 selection:text-chalk-primary min-h-screen relative overflow-x-hidden">
 
-  <!-- ==================== 1. MINIMALIST FLOATING NAVBAR ==================== -->
+  <!-- ==================== 1. FLOATING MINIMALIST NAVBAR ==================== -->
   <header class="fixed top-4 left-0 right-0 z-50 px-4 sm:px-6 pointer-events-none">
-    <nav class="max-w-3xl mx-auto pointer-events-auto backdrop-blur-md bg-obsidian-850/85 border border-surface-border rounded-full px-4 sm:px-5 py-2.5 shadow-xl shadow-black/50 flex items-center justify-between transition-all duration-300">
+    <nav class="max-w-3xl mx-auto pointer-events-auto backdrop-blur-md bg-canvas-card/85 border border-canvas-border rounded-full px-4 sm:px-5 py-2.5 shadow-xl shadow-black/60 flex items-center justify-between transition-all duration-300">
       
-      <!-- Brand / Monogram -->
-      <a href="#about" class="flex items-center gap-2.5 text-chalk-primary hover:text-sierra-light transition-colors group">
-        <span class="w-7 h-7 rounded-full bg-surface-subtle border border-surface-border flex items-center justify-center font-mono text-[11px] font-bold text-sierra group-hover:border-sierra/50 transition-colors">
+      <!-- Brand / Logo -->
+      <a href="#home" class="flex items-center gap-2 group text-chalk-primary hover:text-sierra-light transition-colors">
+        <span class="w-7 h-7 rounded-full bg-canvas-subtle border border-canvas-border flex items-center justify-center font-mono text-[11px] font-bold text-sierra group-hover:border-sierra/50 transition-colors">
           MF
         </span>
-        <span class="font-mono text-xs sm:text-sm font-semibold tracking-tight text-chalk-primary">
+        <span class="font-mono text-xs sm:text-sm font-semibold tracking-tight text-chalk-primary hidden xs:inline-block">
           m-fatahillah
         </span>
       </a>
@@ -129,24 +151,26 @@
         <!-- Rendered by JS -->
       </div>
 
-      <!-- Right: Status / Mobile Menu -->
+      <!-- Right: Status / Mobile Toggle -->
       <div class="flex items-center gap-2">
         <div class="flex items-center gap-2 px-2.5 py-1 rounded-full bg-sierra-dim border border-sierra/20">
           <span class="relative flex h-2 w-2">
             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sierra opacity-75"></span>
             <span class="relative inline-flex rounded-full h-2 w-2 bg-sierra"></span>
           </span>
-          <span class="font-mono text-[11px] text-chalk-primary hidden xs:inline-block">Open to work</span>
+          <span id="nav-badge-text" class="font-mono text-[11px] text-chalk-primary whitespace-nowrap">
+            Available 2026
+          </span>
         </div>
 
-        <button id="mobile-toggle" type="button" aria-label="Toggle navigation" class="md:hidden p-1.5 text-chalk-muted hover:text-chalk-primary hover:bg-surface-border/50 rounded-full transition-colors">
+        <button id="mobile-toggle" type="button" aria-label="Toggle navigation" class="md:hidden p-1.5 text-chalk-muted hover:text-chalk-primary hover:bg-canvas-border/50 rounded-full transition-colors">
           <i data-lucide="menu" class="w-4 h-4"></i>
         </button>
       </div>
     </nav>
 
     <!-- Mobile Drawer -->
-    <div id="mobile-drawer" class="max-w-3xl mx-auto mt-2 hidden pointer-events-auto md:hidden backdrop-blur-lg bg-obsidian-850/95 border border-surface-border rounded-2xl p-3 shadow-2xl shadow-black/70 flex-col gap-1 font-mono text-xs">
+    <div id="mobile-drawer" class="max-w-3xl mx-auto mt-2 hidden pointer-events-auto md:hidden backdrop-blur-lg bg-canvas-card/95 border border-canvas-border rounded-2xl p-3 shadow-2xl shadow-black/80 flex-col gap-1 font-mono text-xs">
       <!-- Rendered by JS -->
     </div>
   </header>
@@ -155,114 +179,185 @@
   <main class="max-w-3xl mx-auto px-5 sm:px-6 pt-32 sm:pt-36 pb-20 flex flex-col gap-20 sm:gap-24 relative z-10">
 
     <!-- ==================== HERO SECTION ==================== -->
-    <section id="about" class="scroll-mt-32 space-y-6">
+    <section id="home" class="scroll-mt-32 space-y-6">
       
-      <!-- Location & Availability Badge -->
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-card border border-surface-border text-chalk-muted text-xs font-mono">
-        <i data-lucide="map-pin" class="w-3.5 h-3.5 text-sierra"></i>
-        <span id="hero-location">Indonesia (WIB • UTC+7)</span>
+      <!-- Status Capsule -->
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-canvas-card border border-canvas-border text-xs font-mono text-sierra">
+        <span class="w-1.5 h-1.5 rounded-full bg-sierra animate-pulse"></span>
+        <span id="hero-badge">Available for 2026 Opportunities</span>
       </div>
 
-      <!-- Human Headline -->
+      <!-- Hero Headline with Typewriter -->
       <div class="space-y-2">
-        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-chalk-primary tracking-tight">
+        <p class="text-xs sm:text-sm font-mono text-chalk-muted uppercase tracking-wider">
+          Hey, I'm
+        </p>
+        <h1 id="hero-name" class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-chalk-primary tracking-tight">
           M. Fatahillah
         </h1>
-        <p class="text-lg sm:text-xl font-medium text-sierra">
-          Software Engineer — Backend, Data & Computer Vision
-        </p>
+        <div class="text-lg sm:text-xl font-semibold text-chalk-secondary pt-1 flex items-center flex-wrap gap-1.5">
+          <span>I engineer</span>
+          <span id="typewriter-text" class="text-sierra font-mono"></span>
+          <span class="typewriter-cursor"></span>
+        </div>
       </div>
 
-      <!-- Grounded Bio -->
+      <!-- Human Grounded Bio -->
       <p id="hero-bio" class="text-chalk-secondary text-sm sm:text-base leading-relaxed font-light max-w-2xl">
-        Saya berfokus merancang layanan backend yang reliabel, otomatisasi pipeline data berskala besar, serta implementasi sistem computer vision praktis untuk menyelesaikan problem nyata di industri.
+        Software Engineer based in Indonesia. Specializing in engineering reliable, highly scalable backend software alongside automated data pipelines and computer vision systems — building high-impact products that solve concrete, real-world problems.
       </p>
 
-      <!-- Key Quick Stats -->
-      <div id="hero-stats" class="grid grid-cols-3 gap-3 pt-1">
+      <!-- Key Metrics Row -->
+      <div id="hero-metrics" class="grid grid-cols-3 gap-3 pt-1">
         <!-- Rendered by JS -->
       </div>
 
       <!-- Action Buttons -->
       <div class="flex flex-wrap items-center gap-3 pt-2">
-        <a href="#projects" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-sierra text-obsidian-950 font-semibold text-xs sm:text-sm hover:bg-sierra-light transition-all shadow-md shadow-sierra/10 active:scale-[0.98]">
-          <span>Lihat Proyek</span>
+        <a href="#showcase" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-sierra text-canvas-card font-semibold text-xs sm:text-sm hover:bg-sierra-light transition-all shadow-md shadow-sierra/10 active:scale-[0.98]">
+          <span>Explore Work</span>
           <i data-lucide="arrow-down" class="w-3.5 h-3.5"></i>
         </a>
-        <a href="#contact" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-surface-card border border-surface-border text-chalk-primary text-xs sm:text-sm font-medium hover:border-sierra/60 hover:text-sierra transition-all active:scale-[0.98]">
-          <i data-lucide="mail" class="w-3.5 h-3.5 text-sierra"></i>
-          <span>Hubungi Saya</span>
+        <a href="#contact" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-canvas-card border border-canvas-border text-chalk-primary text-xs sm:text-sm font-medium hover:border-sierra/60 hover:text-sierra transition-all active:scale-[0.98]">
+          <i data-lucide="send" class="w-3.5 h-3.5 text-sierra"></i>
+          <span>Get in Touch</span>
         </a>
-        <a href="https://github.com/m-fatahillah" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3 py-2.5 rounded-xl bg-surface-card border border-surface-border text-chalk-muted hover:text-chalk-primary hover:border-surface-hover transition-colors text-xs font-mono">
-          <i data-lucide="github" class="w-4 h-4"></i>
+        <a id="hero-github-link" href="https://github.com/m-fatahillah" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-canvas-card border border-canvas-border text-chalk-muted hover:text-chalk-primary hover:border-canvas-hover transition-colors text-xs font-mono">
+          <i data-lucide="github" class="w-4 h-4 text-sierra"></i>
           <span class="hidden xs:inline">GitHub</span>
         </a>
       </div>
+
+      <!-- Interactive Marquee Tech Strip -->
+      <div class="pt-4 border-t border-canvas-border/60">
+        <div class="flex items-center gap-2 text-[11px] font-mono text-chalk-muted pb-2">
+          <i data-lucide="terminal" class="w-3 h-3 text-sierra"></i>
+          <span>PRIMARY TECH STACK:</span>
+        </div>
+        <div id="marquee-tags" class="flex flex-wrap gap-1.5 font-mono text-xs text-chalk-secondary">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
     </section>
 
-    <!-- ==================== EXPERIENCE TIMELINE ==================== -->
-    <section id="experience" class="scroll-mt-28 space-y-6">
+    <!-- ==================== 01 / ABOUT ME ==================== -->
+    <section id="about" class="scroll-mt-28 space-y-6">
       <div class="space-y-1">
-        <h2 class="text-xl sm:text-2xl font-bold text-chalk-primary tracking-tight flex items-center gap-2">
-          <span>Pengalaman & Jejak Rekayasa</span>
+        <div class="font-mono text-xs text-sierra uppercase tracking-wider font-semibold">
+          01 / ABOUT ME
+        </div>
+        <h2 id="about-heading" class="text-xl sm:text-2xl font-bold text-chalk-primary tracking-tight">
+          Engineering Reliable & Scalable Systems
         </h2>
-        <p class="text-xs sm:text-sm text-chalk-muted">
-          Ringkasan tanggung jawab teknis dan peran dalam perancangan perangkat lunak.
-        </p>
       </div>
 
-      <div id="timeline-list" class="space-y-4">
+      <!-- About Description -->
+      <p id="about-body" class="text-xs sm:text-sm text-chalk-secondary leading-relaxed font-light">
+        <!-- Rendered by JS -->
+      </p>
+
+      <!-- Interactive Terminal Preview Card (Caesarian Style) -->
+      <div class="p-4 sm:p-5 rounded-2xl bg-canvas-card border border-canvas-border font-mono text-xs space-y-3 shadow-lg">
+        <div class="flex items-center justify-between pb-2 border-b border-canvas-border/70 text-chalk-muted text-[11px]">
+          <div class="flex items-center gap-1.5">
+            <span class="w-2.5 h-2.5 rounded-full bg-sierra/40"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-sierra/20"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-sierra/10"></span>
+            <span class="ml-2 text-chalk-secondary font-medium">fatahillah@dev-node:~</span>
+          </div>
+          <span class="text-sierra">sh • v2.6</span>
+        </div>
+
+        <div class="space-y-1 text-chalk-secondary">
+          <p><span class="text-sierra">fatahillah@dev-node:~$</span> <span class="text-chalk-primary font-medium">fatahillah --status --focus</span></p>
+          <div id="terminal-output" class="text-chalk-muted space-y-0.5 pt-1 text-[11px]">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Highlight Pillars -->
+      <div id="about-pillars" class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
         <!-- Rendered by JS -->
       </div>
     </section>
 
-    <!-- ==================== FEATURED PROJECTS ==================== -->
-    <section id="projects" class="scroll-mt-28 space-y-6">
+    <!-- ==================== 02 / EXPERTISE ==================== -->
+    <section id="expertise" class="scroll-mt-28 space-y-6">
+      <div class="space-y-1">
+        <div class="font-mono text-xs text-sierra uppercase tracking-wider font-semibold">
+          02 / EXPERTISE
+        </div>
+        <h2 id="expertise-heading" class="text-xl sm:text-2xl font-bold text-chalk-primary tracking-tight">
+          Core Competence & Technical Stack
+        </h2>
+        <p id="expertise-subheading" class="text-xs sm:text-sm text-chalk-muted">
+          Technologies and architectural patterns battle-tested in real production environments.
+        </p>
+      </div>
+
+      <!-- Categories Grid -->
+      <div id="expertise-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <!-- Rendered by JS -->
+      </div>
+    </section>
+
+    <!-- ==================== 03 / TIMELINE ==================== -->
+    <section id="timeline" class="scroll-mt-28 space-y-6">
+      <div class="space-y-1">
+        <div class="font-mono text-xs text-sierra uppercase tracking-wider font-semibold">
+          03 / TIMELINE
+        </div>
+        <h2 id="timeline-heading" class="text-xl sm:text-2xl font-bold text-chalk-primary tracking-tight">
+          Career Roadmap & Engineering Milestones
+        </h2>
+        <p id="timeline-subheading" class="text-xs sm:text-sm text-chalk-muted">
+          A track record of technical delivery and architectural problem-solving.
+        </p>
+      </div>
+
+      <div id="timeline-items" class="space-y-4">
+        <!-- Rendered by JS -->
+      </div>
+    </section>
+
+    <!-- ==================== 04 / SHOWCASE ==================== -->
+    <section id="showcase" class="scroll-mt-28 space-y-6">
       <div class="flex items-end justify-between gap-4">
         <div class="space-y-1">
-          <h2 class="text-xl sm:text-2xl font-bold text-chalk-primary tracking-tight">
-            Proyek Unggulan
+          <div class="font-mono text-xs text-sierra uppercase tracking-wider font-semibold">
+            04 / SHOWCASE
+          </div>
+          <h2 id="showcase-heading" class="text-xl sm:text-2xl font-bold text-chalk-primary tracking-tight">
+            Engineered Projects & Technical Case Studies
           </h2>
-          <p class="text-xs sm:text-sm text-chalk-muted">
-            Studi kasus teknis nyata yang pernah saya bangun.
+          <p id="showcase-subheading" class="text-xs sm:text-sm text-chalk-muted">
+            Production-grade applications built for real performance, scalability, and impact.
           </p>
         </div>
         <a href="https://github.com/m-fatahillah" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-sierra hover:underline hidden sm:inline-flex items-center gap-1">
-          <span>Semua di GitHub</span>
+          <span>GitHub Showcase</span>
           <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
         </a>
       </div>
 
-      <div id="projects-list" class="space-y-5">
+      <div id="showcase-projects" class="space-y-5">
         <!-- Rendered by JS -->
       </div>
     </section>
 
-    <!-- ==================== SKILLS & STACK ==================== -->
-    <section id="skills" class="scroll-mt-28 space-y-6">
-      <div class="space-y-1">
-        <h2 class="text-xl sm:text-2xl font-bold text-chalk-primary tracking-tight">
-          Tech Stack & Alat Kerja
-        </h2>
-        <p class="text-xs sm:text-sm text-chalk-muted">
-          Teknologi yang rutin saya gunakan untuk produksi.
-        </p>
-      </div>
-
-      <div id="skills-container" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <!-- Rendered by JS -->
-      </div>
-    </section>
-
-    <!-- ==================== CONTACT ==================== -->
+    <!-- ==================== 05 / CONTACT ==================== -->
     <section id="contact" class="scroll-mt-28">
-      <div class="p-6 sm:p-8 rounded-2xl bg-surface-card border border-surface-border shadow-xl space-y-6">
-        <div class="space-y-2">
-          <h2 id="contact-heading" class="text-xl sm:text-2xl font-bold text-chalk-primary">
-            Mari Berkolaborasi
+      <div class="p-6 sm:p-8 rounded-2xl bg-canvas-card border border-canvas-border shadow-xl space-y-6">
+        <div class="space-y-1">
+          <div class="font-mono text-xs text-sierra uppercase tracking-wider font-semibold">
+            05 / CONTACT
+          </div>
+          <h2 id="contact-heading" class="text-xl sm:text-2xl font-bold text-chalk-primary tracking-tight">
+            Let's Connect & Build
           </h2>
           <p id="contact-subheading" class="text-xs sm:text-sm text-chalk-secondary font-light max-w-xl leading-relaxed">
-            Terbuka untuk posisi full-time, proyek freelance, atau diskusi teknis seputar rekayasa sistem.
+            Have an opportunity, an architectural challenge, or a project to discuss? Feel free to reach out directly.
           </p>
         </div>
 
@@ -272,21 +367,21 @@
           <div class="relative">
             <button id="copy-email-btn" type="button" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-sierra/15 border border-sierra/30 text-sierra-light font-mono text-xs sm:text-sm font-medium hover:bg-sierra/25 hover:border-sierra/60 transition-all active:scale-[0.98]">
               <i data-lucide="copy" class="w-3.5 h-3.5 text-sierra"></i>
-              <span id="copy-text">Salin Email</span>
+              <span id="copy-text">Copy Email</span>
             </button>
-            <div id="copy-tooltip" class="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-0.5 bg-obsidian-950 border border-sierra/40 text-sierra font-mono text-[10px] rounded shadow-md pointer-events-none opacity-0 transition-opacity whitespace-nowrap">
-              Tersalin!
+            <div id="copy-tooltip" class="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-0.5 bg-canvas-card border border-sierra/40 text-sierra font-mono text-[10px] rounded shadow-md pointer-events-none opacity-0 transition-opacity whitespace-nowrap">
+              Copied to clipboard!
             </div>
           </div>
 
           <!-- Direct Mail Link -->
-          <a id="mail-link" href="mailto:fatahcrown789@gmail.com" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-surface-subtle border border-surface-border text-chalk-secondary hover:text-chalk-primary hover:border-surface-hover text-xs sm:text-sm transition-colors">
-            <i data-lucide="send" class="w-3.5 h-3.5 text-sierra"></i>
+          <a id="mail-link" href="mailto:fatahcrown789@gmail.com" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-canvas-subtle border border-canvas-border text-chalk-secondary hover:text-chalk-primary hover:border-canvas-hover text-xs sm:text-sm transition-colors">
+            <i data-lucide="mail" class="w-3.5 h-3.5 text-sierra"></i>
             <span>fatahcrown789@gmail.com</span>
           </a>
 
           <!-- GitHub Profile -->
-          <a href="https://github.com/m-fatahillah" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-surface-subtle border border-surface-border text-chalk-secondary hover:text-chalk-primary hover:border-surface-hover text-xs sm:text-sm transition-colors">
+          <a href="https://github.com/m-fatahillah" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-canvas-subtle border border-canvas-border text-chalk-secondary hover:text-chalk-primary hover:border-canvas-hover text-xs sm:text-sm transition-colors">
             <i data-lucide="github" class="w-3.5 h-3.5 text-sierra"></i>
             <span>GitHub</span>
           </a>
@@ -297,10 +392,10 @@
   </main>
 
   <!-- ==================== FOOTER ==================== -->
-  <footer class="border-t border-surface-border/60 py-8 px-6 text-center">
+  <footer class="border-t border-canvas-border/60 py-8 px-6 text-center">
     <div class="max-w-3xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-mono text-chalk-muted">
-      <span>© 2026 M. Fatahillah • Software Engineer</span>
-      <span class="text-[11px] text-chalk-muted/80">Crafted with clean code & zero bloat.</span>
+      <span id="footer-copy">© 2026 M. Fatahillah. All Rights Reserved.</span>
+      <span class="text-[11px] text-chalk-muted/80">Engineered with clean architecture & quiet aesthetics.</span>
     </div>
   </footer>
 
@@ -308,14 +403,14 @@
   <script>
     const data = window.PORTFOLIO_DATA;
 
-    // 1. Render Navigation
+    // 1. Navigation Renderer
     function renderNavigation() {
       const desktopNav = document.getElementById('desktop-nav');
       const mobileDrawer = document.getElementById('mobile-drawer');
 
       if (desktopNav && data.navigation) {
         desktopNav.innerHTML = data.navigation.map(n => `
-          <a href="${n.href}" class="nav-item px-3 py-1 rounded-full text-chalk-muted hover:text-chalk-primary hover:bg-surface-border/40 transition-colors" data-id="${n.id}">
+          <a href="${n.href}" class="nav-item px-3 py-1 rounded-full text-chalk-muted hover:text-chalk-primary hover:bg-canvas-border/40 transition-colors" data-id="${n.id}">
             ${n.label}
           </a>
         `).join('');
@@ -323,7 +418,7 @@
 
       if (mobileDrawer && data.navigation) {
         mobileDrawer.innerHTML = data.navigation.map(n => `
-          <a href="${n.href}" class="mobile-item flex items-center justify-between px-3 py-2 rounded-lg text-chalk-muted hover:text-chalk-primary hover:bg-surface-border/40 transition-colors">
+          <a href="${n.href}" class="mobile-item flex items-center justify-between px-3 py-2 rounded-lg text-chalk-muted hover:text-chalk-primary hover:bg-canvas-border/40 transition-colors">
             <span>${n.label}</span>
             <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-sierra"></i>
           </a>
@@ -331,127 +426,175 @@
       }
     }
 
-    // 2. Render Hero & Stats
+    // 2. Hero Renderer
     function renderHero() {
-      document.getElementById('hero-location').textContent = data.profile.location;
+      document.getElementById('hero-badge').textContent = data.profile.badge;
+      document.getElementById('nav-badge-text').textContent = data.profile.badge;
+      document.getElementById('hero-name').textContent = data.profile.name;
       document.getElementById('hero-bio').textContent = data.profile.bio;
 
-      const statsEl = document.getElementById('hero-stats');
-      if (statsEl && data.profile.stats) {
-        statsEl.innerHTML = data.profile.stats.map(s => `
-          <div class="p-3 rounded-xl bg-surface-card border border-surface-border">
-            <div class="font-mono text-sierra text-base sm:text-lg font-bold">${s.value}</div>
-            <div class="text-[11px] text-chalk-muted font-mono mt-0.5">${s.label}</div>
+      const metricsEl = document.getElementById('hero-metrics');
+      if (metricsEl && data.profile.metrics) {
+        metricsEl.innerHTML = data.profile.metrics.map(m => `
+          <div class="p-3 rounded-xl bg-canvas-card border border-canvas-border">
+            <div class="font-mono text-sierra text-base sm:text-lg font-bold">${m.value}</div>
+            <div class="text-[11px] text-chalk-muted font-mono mt-0.5">${m.label}</div>
+          </div>
+        `).join('');
+      }
+
+      const marqueeEl = document.getElementById('marquee-tags');
+      if (marqueeEl && data.marqueeTech) {
+        marqueeEl.innerHTML = data.marqueeTech.map(t => `
+          <span class="px-2 py-0.5 rounded-md bg-canvas-card border border-canvas-border hover:border-sierra/40 transition-colors">
+            ${t}
+          </span>
+        `).join('');
+      }
+    }
+
+    // 3. About Renderer
+    function renderAbout() {
+      document.getElementById('about-heading').textContent = data.about.heading;
+      document.getElementById('about-body').textContent = data.about.body;
+
+      const termEl = document.getElementById('terminal-output');
+      if (termEl && data.profile.terminalPreview) {
+        termEl.innerHTML = data.profile.terminalPreview.output.map(line => `
+          <p>• ${line}</p>
+        `).join('');
+      }
+
+      const pillarsEl = document.getElementById('about-pillars');
+      if (pillarsEl && data.about.highlights) {
+        pillarsEl.innerHTML = data.about.highlights.map(h => `
+          <div class="p-3.5 rounded-xl bg-canvas-card border border-canvas-border space-y-1">
+            <h4 class="font-mono text-xs font-semibold text-chalk-primary">${h.title}</h4>
+            <p class="text-[11px] text-chalk-muted leading-relaxed font-light">${h.desc}</p>
           </div>
         `).join('');
       }
     }
 
-    // 3. Render Experience Timeline
-    function renderExperience() {
-      const timelineEl = document.getElementById('timeline-list');
-      if (!timelineEl || !data.experience) return;
+    // 4. Expertise Renderer
+    function renderExpertise() {
+      document.getElementById('expertise-heading').textContent = data.expertise.heading;
+      document.getElementById('expertise-subheading').textContent = data.expertise.subheading;
 
-      timelineEl.innerHTML = data.experience.map(exp => `
-        <div class="timeline-item p-5 rounded-xl bg-surface-card border border-surface-border space-y-3">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-            <div>
-              <h3 class="text-sm sm:text-base font-semibold text-chalk-primary">${exp.role}</h3>
-              <p class="text-xs text-sierra font-mono">${exp.organization}</p>
+      const expGrid = document.getElementById('expertise-grid');
+      if (expGrid && data.expertise.categories) {
+        expGrid.innerHTML = data.expertise.categories.map(cat => `
+          <div class="bento-card p-5 rounded-xl bg-canvas-card border border-canvas-border space-y-3">
+            <div class="space-y-1">
+              <h3 class="text-sm font-mono font-bold text-chalk-primary tracking-tight">
+                ${cat.title}
+              </h3>
+              <p class="text-xs text-chalk-muted leading-relaxed font-light">
+                ${cat.description}
+              </p>
             </div>
-            <span class="text-[11px] font-mono text-chalk-muted self-start sm:self-auto">${exp.period}</span>
+            <div class="flex flex-wrap gap-1.5 pt-1">
+              ${cat.tags.map(t => `
+                <span class="px-2 py-0.5 rounded-md bg-canvas-subtle border border-canvas-border text-chalk-secondary text-[11px] font-mono hover:border-sierra/40 transition-colors">
+                  ${t}
+                </span>
+              `).join('')}
+            </div>
           </div>
-          <p class="text-xs sm:text-sm text-chalk-secondary font-light leading-relaxed">
-            ${exp.description}
-          </p>
-          <ul class="space-y-1.5 pt-1 text-xs text-chalk-muted">
-            ${exp.highlights.map(h => `
-              <li class="flex items-start gap-2">
-                <span class="text-sierra mt-0.5">•</span>
-                <span>${h}</span>
-              </li>
-            `).join('')}
-          </ul>
-        </div>
-      `).join('');
+        `).join('');
+      }
     }
 
-    // 4. Render Featured Projects
-    function renderProjects() {
-      const projectsEl = document.getElementById('projects-list');
-      if (!projectsEl || !data.projects) return;
+    // 5. Timeline Renderer
+    function renderTimeline() {
+      document.getElementById('timeline-heading').textContent = data.timeline.heading;
+      document.getElementById('timeline-subheading').textContent = data.timeline.subheading;
 
-      projectsEl.innerHTML = data.projects.map(proj => `
-        <div class="project-card p-5 sm:p-6 rounded-2xl bg-surface-card border border-surface-border space-y-4">
-          <div class="flex flex-wrap items-center justify-between gap-2">
-            <span class="px-2.5 py-0.5 rounded-full bg-sierra-dim border border-sierra/20 text-sierra text-[11px] font-mono font-medium">
-              ${proj.category}
-            </span>
-            <span class="text-[11px] font-mono text-chalk-muted">
-              ${proj.metrics}
-            </span>
-          </div>
-
-          <div class="space-y-1.5">
-            <h3 class="text-base sm:text-lg font-bold text-chalk-primary hover:text-sierra-light transition-colors">
-              ${proj.title}
-            </h3>
-            <p class="text-xs sm:text-sm font-medium text-sierra-light">
-              ${proj.tagline}
+      const timelineEl = document.getElementById('timeline-items');
+      if (timelineEl && data.timeline.items) {
+        timelineEl.innerHTML = data.timeline.items.map(item => `
+          <div class="bento-card p-5 rounded-xl bg-canvas-card border border-canvas-border space-y-3">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+              <div>
+                <h3 class="text-sm sm:text-base font-semibold text-chalk-primary">${item.role}</h3>
+                <p class="text-xs text-sierra font-mono">${item.organization} • <span class="text-chalk-muted">${item.location}</span></p>
+              </div>
+              <span class="text-[11px] font-mono text-chalk-muted self-start sm:self-auto">${item.period}</span>
+            </div>
+            <p class="text-xs sm:text-sm text-chalk-secondary font-light leading-relaxed">
+              ${item.summary}
             </p>
-            <p class="text-xs sm:text-sm text-chalk-secondary font-light leading-relaxed pt-1">
-              ${proj.description}
-            </p>
+            <ul class="space-y-1.5 pt-1 text-xs text-chalk-muted">
+              ${item.points.map(pt => `
+                <li class="flex items-start gap-2">
+                  <span class="text-sierra mt-0.5">▸</span>
+                  <span>${pt}</span>
+                </li>
+              `).join('')}
+            </ul>
           </div>
-
-          <!-- Tags -->
-          <div class="flex flex-wrap gap-1.5 pt-1">
-            ${proj.tags.map(t => `
-              <span class="px-2 py-0.5 rounded-md bg-surface-subtle border border-surface-border text-chalk-muted text-[11px] font-mono">
-                ${t}
-              </span>
-            `).join('')}
-          </div>
-
-          <!-- Links -->
-          <div class="flex items-center gap-4 pt-3 border-t border-surface-border/60 text-xs font-mono">
-            <a href="${proj.githubUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-chalk-secondary hover:text-chalk-primary transition-colors">
-              <i data-lucide="github" class="w-3.5 h-3.5 text-sierra"></i>
-              <span>GitHub Repository</span>
-              <i data-lucide="arrow-up-right" class="w-3 h-3 text-chalk-muted"></i>
-            </a>
-          </div>
-        </div>
-      `).join('');
+        `).join('');
+      }
     }
 
-    // 5. Render Skills
-    function renderSkills() {
-      const skillsContainer = document.getElementById('skills-container');
-      if (!skillsContainer || !data.skills) return;
+    // 6. Showcase Renderer
+    function renderShowcase() {
+      document.getElementById('showcase-heading').textContent = data.showcase.heading;
+      document.getElementById('showcase-subheading').textContent = data.showcase.subheading;
 
-      const entries = Object.values(data.skills);
-      skillsContainer.innerHTML = entries.map(cat => `
-        <div class="skill-group p-4 sm:p-5 rounded-xl bg-surface-card border border-surface-border space-y-3">
-          <h3 class="text-xs font-mono uppercase tracking-wider text-sierra font-semibold">
-            ${cat.title}
-          </h3>
-          <div class="flex flex-wrap gap-1.5">
-            ${cat.items.map(item => `
-              <span class="px-2.5 py-1 rounded-md bg-surface-subtle border border-surface-border text-chalk-secondary text-xs hover:border-sierra/40 transition-colors">
-                ${item}
+      const projEl = document.getElementById('showcase-projects');
+      if (projEl && data.showcase.projects) {
+        projEl.innerHTML = data.showcase.projects.map(p => `
+          <div class="bento-card p-5 sm:p-6 rounded-2xl bg-canvas-card border border-canvas-border space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="px-2.5 py-0.5 rounded-full bg-sierra-dim border border-sierra/25 text-sierra text-[11px] font-mono font-semibold">
+                ${p.badge}
               </span>
-            `).join('')}
+              <span class="text-[11px] font-mono text-chalk-muted">
+                ${p.metrics}
+              </span>
+            </div>
+
+            <div class="space-y-1.5">
+              <h3 class="text-base sm:text-lg font-bold text-chalk-primary hover:text-sierra-light transition-colors">
+                ${p.title}
+              </h3>
+              <p class="text-xs sm:text-sm font-medium text-sierra-light font-mono">
+                ${p.tagline}
+              </p>
+              <p class="text-xs sm:text-sm text-chalk-secondary font-light leading-relaxed pt-1">
+                ${p.description}
+              </p>
+            </div>
+
+            <!-- Tags -->
+            <div class="flex flex-wrap gap-1.5 pt-1">
+              ${p.tags.map(t => `
+                <span class="px-2 py-0.5 rounded-md bg-canvas-subtle border border-canvas-border text-chalk-muted text-[11px] font-mono">
+                  ${t}
+                </span>
+              `).join('')}
+            </div>
+
+            <!-- Links -->
+            <div class="flex items-center gap-4 pt-3 border-t border-canvas-border/60 text-xs font-mono">
+              <a href="${p.codeUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-chalk-secondary hover:text-chalk-primary transition-colors">
+                <i data-lucide="github" class="w-3.5 h-3.5 text-sierra"></i>
+                <span>Repository Source</span>
+                <i data-lucide="arrow-up-right" class="w-3 h-3 text-chalk-muted"></i>
+              </a>
+            </div>
           </div>
-        </div>
-      `).join('');
+        `).join('');
+      }
     }
 
-    // 6. Render Contact
+    // 7. Contact Renderer
     function renderContact() {
       document.getElementById('contact-heading').textContent = data.contact.heading;
       document.getElementById('contact-subheading').textContent = data.contact.subheading;
-      
+      document.getElementById('footer-copy').textContent = data.contact.footerCopy;
+
       const mailLink = document.getElementById('mail-link');
       if (mailLink) {
         mailLink.href = `mailto:${data.contact.email}`;
@@ -459,14 +602,53 @@
       }
     }
 
-    // Initialize UI
+    // 8. Typewriter Effect (Caesarian Style)
+    function initTypewriter() {
+      const el = document.getElementById('typewriter-text');
+      if (!el || !data.profile.typewriterRoles) return;
+
+      const roles = data.profile.typewriterRoles;
+      let roleIdx = 0;
+      let charIdx = 0;
+      let isDeleting = false;
+
+      function type() {
+        const currentRole = roles[roleIdx];
+        if (isDeleting) {
+          el.textContent = currentRole.substring(0, charIdx - 1);
+          charIdx--;
+        } else {
+          el.textContent = currentRole.substring(0, charIdx + 1);
+          charIdx++;
+        }
+
+        let speed = isDeleting ? 40 : 80;
+
+        if (!isDeleting && charIdx === currentRole.length) {
+          speed = 2000;
+          isDeleting = true;
+        } else if (isDeleting && charIdx === 0) {
+          isDeleting = false;
+          roleIdx = (roleIdx + 1) % roles.length;
+          speed = 400;
+        }
+
+        setTimeout(type, speed);
+      }
+
+      type();
+    }
+
+    // Initialize Everything
     function init() {
       renderNavigation();
       renderHero();
-      renderExperience();
-      renderProjects();
-      renderSkills();
+      renderAbout();
+      renderExpertise();
+      renderTimeline();
+      renderShowcase();
       renderContact();
+      initTypewriter();
 
       if (typeof lucide !== 'undefined' && lucide.createIcons) {
         lucide.createIcons();
@@ -475,7 +657,7 @@
 
     init();
 
-    // ==================== INTERACTION HANDLERS ====================
+    // ==================== INTERACTIVITY ====================
 
     // Mobile Menu Toggle
     const mobileBtn = document.getElementById('mobile-toggle');
@@ -544,12 +726,12 @@
             ta.remove();
           }
 
-          copyText.textContent = 'Tersalin!';
+          copyText.textContent = 'Copied!';
           copyTooltip.classList.remove('opacity-0');
           copyTooltip.classList.add('opacity-100');
 
           setTimeout(() => {
-            copyText.textContent = 'Salin Email';
+            copyText.textContent = 'Copy Email';
             copyTooltip.classList.add('opacity-0');
             copyTooltip.classList.remove('opacity-100');
           }, 2000);
