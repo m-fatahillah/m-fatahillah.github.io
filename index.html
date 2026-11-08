@@ -111,6 +111,22 @@
       background-color: rgba(38, 48, 61, 0.85) !important;
     }
 
+    /* Typewriter Cursor */
+    .typewriter-cursor {
+      display: inline-block;
+      width: 2px;
+      height: 1.15em;
+      background-color: #8da4b8;
+      vertical-align: middle;
+      margin-left: 3px;
+      animation: blink 1s step-start infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
     /* Tooltip Transition */
     .tooltip-fade {
       transition: opacity 200ms ease, transform 200ms ease;
@@ -177,12 +193,20 @@
         <span id="hero-collaboration-status">Open to Collaborations & Roles</span>
       </div>
 
-      <!-- Main Headline & Role -->
+      <!-- Main Headline & Dynamic Role with Typewriter Effect -->
       <div class="space-y-3 sm:space-y-4 max-w-3xl">
+        <p class="text-xs sm:text-sm font-mono text-chalk-muted uppercase tracking-wider">
+          Hey, I'm
+        </p>
         <h1 id="hero-name" class="text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-extrabold text-chalk-heading tracking-tight leading-[1.15]">
           Muhammad Fatahillah Athabrani
         </h1>
-        <p id="hero-role" class="text-lg sm:text-2xl md:text-3xl font-semibold text-sierra tracking-tight">
+        <div class="text-lg sm:text-2xl md:text-3xl font-semibold text-chalk-body tracking-tight flex items-center flex-wrap gap-2 pt-1">
+          <span>I engineer</span>
+          <span id="typewriter-text" class="text-sierra font-mono font-bold"></span>
+          <span class="typewriter-cursor"></span>
+        </div>
+        <p id="hero-role" class="text-xs sm:text-sm font-mono text-chalk-muted">
           Software Engineer & Intelligent Systems Enthusiast
         </p>
       </div>
@@ -351,6 +375,14 @@
         collaborationStatus: "Open to Collaborations & Roles",
         bio: "Fokus pada perancangan arsitektur web modern yang tangguh, rekayasa backend berperforma tinggi, pipeline integrasi data terotomatisasi, serta penerapan model machine learning cerdas untuk menjawab tantangan dunia nyata.",
         email: "fatahcrown789@gmail.com",
+        typewriterRoles: [
+          "Sign.L (Flutter & TensorFlow Lite)",
+          "Backend Systems (Lab IVSS)",
+          "Full-Stack Web (Vue 3 & Laravel)",
+          "Interactive Geospatial GIS (Koze-Kost)",
+          "Data Pipelines & ETL Architecture",
+          "Intelligent Vision Systems"
+        ],
         metrics: [
           { value: "03+", label: "Tahun Pengalaman" },
           { value: "15+", label: "Proyek Selesai" },
@@ -590,6 +622,43 @@
       }
     }
 
+    // 6. Typewriter Dynamic Headline Animation
+    function initTypewriter() {
+      const el = document.getElementById('typewriter-text');
+      if (!el || !PORTFOLIO_DATA.personal.typewriterRoles) return;
+
+      const roles = PORTFOLIO_DATA.personal.typewriterRoles;
+      let roleIdx = 0;
+      let charIdx = 0;
+      let isDeleting = false;
+
+      function type() {
+        const currentRole = roles[roleIdx];
+        if (isDeleting) {
+          el.textContent = currentRole.substring(0, charIdx - 1);
+          charIdx--;
+        } else {
+          el.textContent = currentRole.substring(0, charIdx + 1);
+          charIdx++;
+        }
+
+        let speed = isDeleting ? 40 : 80;
+
+        if (!isDeleting && charIdx === currentRole.length) {
+          speed = 2000;
+          isDeleting = true;
+        } else if (isDeleting && charIdx === 0) {
+          isDeleting = false;
+          roleIdx = (roleIdx + 1) % roles.length;
+          speed = 400;
+        }
+
+        setTimeout(type, speed);
+      }
+
+      type();
+    }
+
     // Initialize All Content
     function initPortfolio() {
       renderNavigation();
@@ -597,6 +666,7 @@
       renderSkills();
       renderProjects();
       renderContact();
+      initTypewriter();
 
       // Render Lucide SVG Icons after DOM injection
       if (typeof lucide !== 'undefined' && lucide.createIcons) {
