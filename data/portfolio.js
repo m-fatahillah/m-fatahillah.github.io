@@ -1,109 +1,120 @@
 /**
  * PORTFOLIO DATA CONFIGURATION
- * Edit this file to update your portfolio content without touching the HTML structure.
- * Ready for static hosting (GitHub Pages, Vercel, Netlify).
+ * Dikelola secara modular — mudah diedit tanpa perlu mengubah struktur HTML.
  */
 window.PORTFOLIO_DATA = {
   profile: {
-    initials: "FP",
-    brandName: "fatah.dev",
-    name: "Fatah Pratama",
-    role: "Software Engineer & Intelligent Systems Enthusiast",
-    statusBadge: "Available for work",
-    collaborationStatus: "Open to Collaborations & Roles",
-    bio: "Fokus pada perancangan arsitektur web yang tangguh, rekayasa backend berperforma tinggi, pipeline integrasi data terotomatisasi, serta implementasi machine learning cerdas untuk menjawab tantangan dunia nyata.",
-    email: "fatah.pratama@example.com",
-    githubUrl: "https://github.com",
-    linkedinUrl: "https://linkedin.com",
-    metrics: [
-      { value: "03+", label: "Tahun Pengalaman" },
-      { value: "15+", label: "Proyek Selesai" },
-      { value: "99.9%", label: "Uptime Mindset" }
+    name: "M. Fatahillah",
+    handle: "m-fatahillah",
+    avatarInitials: "MF",
+    title: "Software Engineer",
+    subtitle: "Backend Systems, Data Pipelines & Computer Vision",
+    location: "Indonesia (WIB • UTC+7)",
+    availability: "Available for roles & projects",
+    bio: "Halo, saya Fatahillah. Saya seorang software engineer yang berfokus membangun layanan backend yang reliabel, otomatisasi pipeline data berskala besar, serta implementasi sistem computer vision praktis untuk menyelesaikan problem nyata.",
+    email: "fatahcrown789@gmail.com",
+    githubUrl: "https://github.com/m-fatahillah",
+    linkedinUrl: "https://linkedin.com/in/m-fatahillah",
+    resumeUrl: "#", // ganti dengan link Google Drive / PDF CV Anda jika ada
+    stats: [
+      { label: "Pengalaman", value: "3+ Tahun" },
+      { label: "Proyek Selesai", value: "15+ Proyek" },
+      { label: "Fokus Utama", value: "Backend & Data" }
     ]
   },
 
   navigation: [
-    { label: "// about", href: "#about", section: "about" },
-    { label: "// skills", href: "#skills", section: "skills" },
-    { label: "// projects", href: "#projects", section: "projects" },
-    { label: "// contact", href: "#contact", section: "contact" }
+    { label: "Tentang", href: "#about", id: "about" },
+    { label: "Pengalaman", href: "#experience", id: "experience" },
+    { label: "Proyek", href: "#projects", id: "projects" },
+    { label: "Keahlian", href: "#skills", id: "skills" },
+    { label: "Kontak", href: "#contact", id: "contact" }
   ],
 
-  skillCategories: [
+  experience: [
     {
-      id: "backend",
-      num: "01 // Core",
-      icon: "server",
-      title: "Backend & Frameworks",
-      description: "Pondasi logika bisnis modular, scalable, dan aman dengan arsitektur microservices dan monolitik modern.",
-      tags: ["Laravel", "PHP 8.x", "Filament Admin", "REST APIs"]
+      period: "2024 — Sekarang",
+      role: "Backend & Intelligent Systems Developer",
+      organization: "Freelance & R&D Projects",
+      description: "Merancang arsitektur API berskala menengah, membangun otomasi pipeline data ETL dengan Pentaho & PostgreSQL, serta mengimplementasikan edge-inference computer vision menggunakan TensorFlow Lite.",
+      highlights: [
+        "Membangun REST API modular menggunakan Laravel & Filament Admin",
+        "Mengembangkan model pengenalan gesture tangan interaktif dengan performa 45+ FPS",
+        "Optimasi query database relational & pemodelan data star-schema"
+      ]
     },
     {
-      id: "database",
-      num: "02 // Data",
-      icon: "database",
-      title: "Database & Data Pipeline",
-      description: "Desain skema data relasional, pemodelan dimensional star-schema, dan otomasi alur ETL terintegrasi.",
-      tags: ["PostgreSQL", "MySQL", "Pentaho PDI", "Supabase"]
-    },
-    {
-      id: "ai",
-      num: "03 // AI",
-      icon: "cpu",
-      title: "AI & Vision Systems",
-      description: "Implementasi computer vision interaktif, ekstraksi koordinat gesture, dan inferensi model on-device yang ringan.",
-      tags: ["OpenCV", "TensorFlow Lite", "Python", "Computer Vision Models"]
-    },
-    {
-      id: "tools",
-      num: "04 // Ops",
-      icon: "terminal",
-      title: "Tools & Workflow",
-      description: "Lingkungan kerja kontainerisasi, pengujian API terstruktur, version control teratur, dan ekosistem Linux.",
-      tags: ["Git", "Docker", "Postman", "Linux"]
+      period: "2023 — 2024",
+      role: "Software Quality & Web Engineer",
+      organization: "Academic & Client Projects",
+      description: "Mengembangkan platform web aplikasi terintegrasi serta menerapkan pengujian jaminan mutu software (SQA) berbasis standar internasional ISO/IEC 25010.",
+      highlights: [
+        "Unit testing komprehensif menggunakan PHPUnit dengan code-coverage tinggi",
+        "Performance testing dan load-testing concurrency menggunakan Apache JMeter",
+        "Implementasi secure authentication & role-based access control (RBAC)"
+      ]
     }
   ],
 
   projects: [
     {
-      id: "gesture-sign-ai",
-      category: "Computer Vision / Sign Language AI",
-      title: "GestureSign AI — Sistem Pengenalan Isyarat Gamifikasi",
-      description: "Sistem interaktif pengenalan gesture bahasa isyarat real-time berbasis TensorFlow Lite dan MediaPipe on-device dengan modul gamifikasi edukatif untuk mempercepat akselerasi pembelajaran bahasa isyarat secara presisi.",
-      tags: ["TensorFlow Lite", "Python", "OpenCV", "MediaPipe", "WebSockets"],
+      id: "gesturesign-ai",
+      title: "GestureSign AI",
+      tagline: "Sistem Pengenalan Isyarat Gamifikasi Real-Time",
+      description: "Aplikasi pengenalan gesture bahasa isyarat interaktif menggunakan TensorFlow Lite dan MediaPipe. Menjalankan inferensi landmark tangan secara on-device di browser untuk memangkas latensi dan biaya server GPU, dipadukan modul scoring edukatif.",
+      tags: ["Python", "TensorFlow Lite", "MediaPipe", "OpenCV", "WebSockets"],
+      category: "Computer Vision / AI",
+      githubUrl: "https://github.com/m-fatahillah",
       demoUrl: "#",
-      codeUrl: "https://github.com",
-      featured: true
+      metrics: "Inferensi 45+ FPS di perangkat standar tanpa cloud GPU"
     },
     {
       id: "transact-etl",
-      category: "Data Warehouse & ETL Pipeline",
-      title: "TransactETL — Enterprise Data Warehouse Architecture",
-      description: "Arsitektur star-schema dimensional dan pipeline otomatisasi integrasi data transaksi berskala jutaan baris memakai Pentaho Data Integrator (Kettle) dan PostgreSQL untuk analitik bisnis komprehensif.",
-      tags: ["Pentaho PDI", "PostgreSQL", "Star Schema", "ETL Automation", "SQL"],
+      title: "TransactETL Data Warehouse",
+      tagline: "Pipeline ETL & Skema Dimensional Transaksi",
+      description: "Perancangan arsitektur data warehouse dimensional star-schema untuk mengonsolidasikan data transaksi heterogen volume tinggi. Otomasi proses ETL berkala memakai Pentaho Data Integrator (Kettle) menuju PostgreSQL untuk analitik bisnis yang responsif.",
+      tags: ["PostgreSQL", "Pentaho PDI", "Star Schema", "SQL", "ETL Automation"],
+      category: "Data Engineering",
+      githubUrl: "https://github.com/m-fatahillah",
       demoUrl: "#",
-      codeUrl: "https://github.com",
-      featured: false
+      metrics: "Memproses hingga 1.2M baris data per batch run"
     },
     {
-      id: "estate-core-sqa",
-      category: "Marketplace & SQA ISO/IEC 25010",
-      title: "EstateCore — Property Management & SQA Audited Platform",
-      description: "Platform web manajemen properti dengan arsitektur backend kokoh (Laravel & Filament) yang divalidasi pengujian kualitas komprehensif standar ISO/IEC 25010: Functional Suitability, Performance, dan Security.",
-      tags: ["Laravel", "Filament Admin", "MySQL", "PHPUnit", "ISO/IEC 25010"],
+      id: "estate-core",
+      title: "EstateCore Platform",
+      tagline: "Marketplace Properti & Audit Mutu ISO/IEC 25010",
+      description: "Sistem web manajemen properti dengan arsitektur backend kokoh (Laravel & Filament). Diaudit secara formal menggunakan standar ISO/IEC 25010 mencakup Functional Suitability, Performance Efficiency, dan Security audit.",
+      tags: ["Laravel 11", "Filament Admin", "MySQL", "PHPUnit", "JMeter SQA"],
+      category: "Full Stack & SQA",
+      githubUrl: "https://github.com/m-fatahillah",
       demoUrl: "#",
-      codeUrl: "https://github.com",
-      featured: false
+      metrics: "100% test passing rate & <320ms avg response time"
     }
   ],
 
+  skills: {
+    backend: {
+      title: "Backend & Architecture",
+      items: ["Laravel", "PHP 8+", "Filament Admin", "RESTful APIs", "Microservices Concepts"]
+    },
+    data: {
+      title: "Databases & Data Pipeline",
+      items: ["PostgreSQL", "MySQL", "Pentaho PDI (Kettle)", "Star Schema (OLAP)", "Supabase"]
+    },
+    ai: {
+      title: "AI & Computer Vision",
+      items: ["Python", "OpenCV", "TensorFlow Lite", "MediaPipe", "Edge Inference"]
+    },
+    tools: {
+      title: "DevOps & Tools",
+      items: ["Git & GitHub", "Docker", "Postman", "Linux / Bash", "PHPUnit", "JMeter"]
+    }
+  },
+
   contact: {
-    badge: "Let's Connect",
-    headline: "Tertarik Berkolaborasi atau Diskusi Proyek?",
-    description: "Saya selalu terbuka untuk diskusi mengenai arsitektur backend, otomasi data pipeline, implementasi computer vision, atau peluang kerja sama baru.",
-    directEmailLabel: "Direct Email:",
-    footerCopyright: "© 2026 Fatah Pratama. Minimal, modern & quiet engineering.",
-    footerNote: "Static SPA • GitHub Pages & Vercel Ready"
+    heading: "Mari Berkolaborasi",
+    subheading: "Sedang terbuka untuk peluang kerja full-time, proyek freelance, atau diskusi teknis seputar rekayasa sistem.",
+    email: "fatahcrown789@gmail.com",
+    footerText: "Dibuat dengan pendekatan bersih, performa tinggi & tanpa beban dependensi."
   }
 };
-
