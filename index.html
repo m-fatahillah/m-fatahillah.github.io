@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fatah Pratama — Software Engineer Portfolio</title>
+  <meta name="description" content="Portfolio Software Engineer berfokus pada web architecture, backend engineering, data pipeline, dan machine learning." />
+  <meta name="theme-color" content="#0c0f14" />
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Portfolio Modular Data Configuration -->
+  <script src="data/portfolio.js"></script>
+
+  <!-- Tailwind Configuration -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          screens: {
+            'xs': '480px',
+          },
+          colors: {
+            charcoal: {
+              950: '#0c0f14',
+              900: '#0f141c',
+            },
+            slateCard: {
+              DEFAULT: '#161b22',
+              subtle: '#1a202c',
+            },
+            slateBorder: {
+              DEFAULT: '#26303d',
+              highlight: '#394657',
+            },
+            sierra: {
+              DEFAULT: '#8da4b8',
+              muted: '#7895aa',
+              light: '#a3b8cc',
+              glow: 'rgba(141, 164, 184, 0.25)',
+            },
+            chalk: {
+              DEFAULT: '#f5f6f8',
+              body: '#d0d5dd',
+              muted: '#7d8a9a',
+            }
+          },
+          boxShadow: {
+            'glow-sierra': '0 0 24px -2px rgba(141, 164, 184, 0.25)',
+            'glow-card': '0 12px 32px -8px rgba(0, 0, 0, 0.7), 0 0 20px -4px rgba(141, 164, 184, 0.12)',
+          }
+        },
+      },
+    };
+  </script>
+
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 7px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0c0f14;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #26303d;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #7895aa;
+    }
+
+    /* Ambient Background Lighting */
+    .bg-ambient {
+      background-color: #0c0f14;
+      background-image:
+        radial-gradient(circle at 50% 0%, rgba(141, 164, 184, 0.08) 0%, transparent 55%),
+        radial-gradient(circle at 100% 40%, rgba(120, 149, 170, 0.04) 0%, transparent 45%),
+        radial-gradient(circle at 0% 80%, rgba(141, 164, 184, 0.04) 0%, transparent 45%);
+      background-attachment: fixed;
+    }
+
+    /* Card Micro-Interaction (GPU-accelerated) */
+    .interactive-card {
+      transition: transform 250ms cubic-bezier(0.16, 1, 0.3, 1), border-color 250ms ease, box-shadow 250ms ease;
+      will-change: transform;
+    }
+    .interactive-card:hover {
+      transform: translateY(-4px) scale(1.01);
+      border-color: rgba(141, 164, 184, 0.45);
+      box-shadow: 0 14px 34px -8px rgba(0, 0, 0, 0.7), 0 0 22px -2px rgba(141, 164, 184, 0.2);
+    }
+
+    /* Tooltip Animation */
+    .tooltip-anim {
+      transition: opacity 200ms ease, transform 200ms ease;
+    }
+  </style>
+</head>
+
+<body class="bg-ambient text-chalk-body font-sans antialiased selection:bg-sierra/25 selection:text-chalk min-h-screen relative overflow-x-hidden">
+
+  <!-- ==================== 1. FLOATING MINIMALIST NAVBAR ==================== -->
+  <header class="fixed top-4 left-0 right-0 z-50 px-4 sm:px-6 pointer-events-none">
+    <nav class="max-w-4xl mx-auto pointer-events-auto backdrop-blur-md bg-slateCard/80 border border-slateBorder rounded-full px-4 sm:px-6 py-2.5 sm:py-3 shadow-xl shadow-black/40 flex items-center justify-between transition-all duration-300">
+      
+      <!-- Brand / Logo -->
+      <a href="#about" class="flex items-center gap-2 group text-chalk hover:text-sierra-light transition-colors">
+        <span id="nav-initials" class="w-7 h-7 rounded-full bg-slateCard-subtle border border-slateBorder flex items-center justify-center font-mono text-xs font-semibold text-sierra group-hover:border-sierra/50 transition-colors">
+          FP
+        </span>
+        <span id="nav-brand" class="font-mono text-xs sm:text-sm font-medium tracking-tight hidden xs:inline-block">
+          fatah.dev
+        </span>
+      </a>
+
+      <!-- Desktop Navigation Links (Populated by JS) -->
+      <div id="desktop-nav-links" class="hidden md:flex items-center gap-1 text-xs font-mono">
+        <!-- Rendered by JS -->
+      </div>
+
+      <!-- Right: Status Badge & Mobile Hamburger -->
+      <div class="flex items-center gap-2.5">
+        <!-- Status Indicator Pill -->
+        <div class="flex items-center gap-2 px-3 py-1 rounded-full bg-sierra/10 border border-sierra/20">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sierra opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-sierra"></span>
+          </span>
+          <span id="nav-status-text" class="font-mono text-[11px] sm:text-xs text-chalk font-medium tracking-tight whitespace-nowrap">
+            Available for work
+          </span>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobile-menu-btn" type="button" aria-label="Toggle navigation menu" class="md:hidden p-1.5 text-chalk-muted hover:text-chalk hover:bg-slateBorder/40 rounded-full transition-colors">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Dropdown Menu (Populated by JS) -->
+    <div id="mobile-menu" class="max-w-4xl mx-auto mt-2 hidden pointer-events-auto md:hidden backdrop-blur-lg bg-slateCard/95 border border-slateBorder rounded-2xl p-4 shadow-2xl shadow-black/70 flex-col gap-2 font-mono text-xs">
+      <!-- Rendered by JS -->
+    </div>
+  </header>
+
+  <!-- ==================== MAIN CONTENT CONTAINER ==================== -->
+  <main class="max-w-5xl mx-auto px-5 sm:px-8 pt-32 sm:pt-40 pb-20 flex flex-col gap-24 sm:gap-32 relative z-10">
+
+    <!-- ==================== 2. HERO SECTION ==================== -->
+    <section id="about" class="scroll-mt-36 flex flex-col items-start gap-6 sm:gap-8">
+      
+      <!-- Collaboration Capsule Tag -->
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slateCard border border-slateBorder text-sierra text-xs sm:text-sm font-mono tracking-tight shadow-sm hover:border-sierra/40 transition-colors">
+        <span class="inline-block w-1.5 h-1.5 rounded-full bg-sierra animate-pulse"></span>
+        <span id="hero-collaboration-status">Open to Collaborations & Roles</span>
+      </div>
+
+      <!-- Main Headline & Role -->
+      <div class="space-y-3 sm:space-y-4 max-w-3xl">
+        <h1 id="hero-name" class="text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-extrabold text-chalk tracking-tight leading-[1.15]">
+          Fatah Pratama
+        </h1>
+        <p id="hero-role" class="text-lg sm:text-2xl md:text-3xl font-semibold text-sierra tracking-tight">
+          Software Engineer & Intelligent Systems Enthusiast
+        </p>
+      </div>
+
+      <!-- Concise Description -->
+      <p id="hero-bio" class="text-chalk-body text-base sm:text-lg leading-relaxed max-w-2xl font-light">
+        Fokus pada perancangan arsitektur web yang tangguh, rekayasa backend berperforma tinggi, pipeline integrasi data terotomatisasi, serta implementasi machine learning cerdas untuk menjawab tantangan dunia nyata.
+      </p>
+
+      <!-- Key Metadata Highlights (Rendered by JS) -->
+      <div id="hero-metrics" class="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 w-full max-w-2xl pt-2">
+        <!-- Rendered by JS -->
+      </div>
+
+      <!-- Interactive CTA Buttons -->
+      <div class="flex flex-col xs:flex-row items-stretch xs:items-center gap-3.5 w-full xs:w-auto pt-2">
+        <!-- Primary CTA -->
+        <a href="#projects" class="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-sierra text-charcoal-950 font-semibold text-sm hover:bg-sierra-light transition-all duration-200 shadow-lg shadow-sierra/10 hover:shadow-sierra/25 active:scale-[0.98]">
+          <span>Lihat Proyek</span>
+          <i data-lucide="arrow-down" class="w-4 h-4"></i>
+        </a>
+
+        <!-- Secondary CTA -->
+        <a href="#contact" class="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-transparent border border-slateBorder text-chalk font-medium text-sm hover:border-sierra hover:text-sierra-light hover:bg-sierra/5 transition-all duration-200 active:scale-[0.98]">
+          <i data-lucide="send" class="w-4 h-4 text-sierra"></i>
+          <span>Kontak / CV</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ==================== 3. CORE TECH STACK & TOOLS ==================== -->
+    <section id="skills" class="scroll-mt-28 space-y-8">
+      
+      <!-- Section Header -->
+      <div class="space-y-2">
+        <div class="flex items-center gap-2 font-mono text-xs text-sierra tracking-wider uppercase">
+          <span class="w-2 h-2 rounded-full bg-sierra"></span>
+          <span>Capability Matrix</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-bold text-chalk tracking-tight">
+          Core Tech Stack & Tools
+        </h2>
+        <p class="text-sm text-chalk-muted max-w-xl">
+          Kombinasi teknologi yang diuji dalam lingkungan produksi untuk keandalan arsitektur dan efisiensi eksekusi.
+        </p>
+      </div>
+
+      <!-- Skills Cards Grid (Rendered by JS) -->
+      <div id="skills-grid" class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
+        <!-- Rendered by JS -->
+      </div>
+    </section>
+
+    <!-- ==================== 4. FEATURED PROJECTS ==================== -->
+    <section id="projects" class="scroll-mt-28 space-y-8">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+        <div class="space-y-2">
+          <div class="flex items-center gap-2 font-mono text-xs text-sierra tracking-wider uppercase">
+            <span class="w-2 h-2 rounded-full bg-sierra"></span>
+            <span>Selected Works</span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-bold text-chalk tracking-tight">
+            Featured Projects
+          </h2>
+        </div>
+        <p class="text-xs font-mono text-chalk-muted">
+          [ 03 Key Case Studies ]
+        </p>
+      </div>
+
+      <!-- Projects Grid (1 column on mobile, 2 columns on tablet/desktop) -->
+      <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Rendered by JS -->
+      </div>
+    </section>
+
+    <!-- ==================== 5. CONTACT & SOCIAL CONNECT ==================== -->
+    <section id="contact" class="scroll-mt-28">
+      <div class="p-8 sm:p-12 rounded-3xl bg-slateCard/90 border border-slateBorder shadow-glow-card relative overflow-hidden">
+        
+        <!-- Subtle Sierra Ambient Glow inside Card -->
+        <div class="absolute -top-24 -right-24 w-64 h-64 bg-sierra/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-2xl space-y-6 relative z-10">
+          <div class="space-y-3">
+            <div class="inline-flex items-center gap-2 font-mono text-xs text-sierra uppercase tracking-wider">
+              <span class="w-2 h-2 rounded-full bg-sierra"></span>
+              <span id="contact-badge">Let's Connect</span>
+            </div>
+            <h2 id="contact-headline" class="text-2xl sm:text-4xl font-extrabold text-chalk tracking-tight">
+              Tertarik Berkolaborasi atau Diskusi Proyek?
+            </h2>
+            <p id="contact-description" class="text-sm sm:text-base text-chalk-body font-light leading-relaxed">
+              Saya selalu terbuka untuk diskusi mengenai arsitektur backend, otomasi data pipeline, implementasi computer vision, atau peluang kerja sama baru.
+            </p>
+          </div>
+
+          <!-- Action Buttons Bar -->
+          <div class="flex flex-wrap items-center gap-3 pt-2">
+            
+            <!-- GitHub Button -->
+            <a id="contact-github" href="https://github.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slateCard-subtle border border-slateBorder text-chalk-body text-xs sm:text-sm font-medium hover:border-sierra/60 hover:text-chalk hover:bg-slateBorder/40 transition-all duration-200">
+              <i data-lucide="github" class="w-4 h-4 text-sierra"></i>
+              <span>GitHub</span>
+            </a>
+
+            <!-- LinkedIn Button -->
+            <a id="contact-linkedin" href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slateCard-subtle border border-slateBorder text-chalk-body text-xs sm:text-sm font-medium hover:border-sierra/60 hover:text-chalk hover:bg-slateBorder/40 transition-all duration-200">
+              <i data-lucide="linkedin" class="w-4 h-4 text-sierra"></i>
+              <span>LinkedIn</span>
+            </a>
+
+            <!-- Copy Email Button (With Interactive Tooltip Feedback) -->
+            <div class="relative inline-block">
+              <button id="copy-email-btn" type="button" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-sierra/15 border border-sierra/30 text-sierra-light text-xs sm:text-sm font-mono font-medium hover:bg-sierra/25 hover:border-sierra/60 transition-all duration-200 active:scale-[0.98]">
+                <i id="copy-icon" data-lucide="copy" class="w-4 h-4 text-sierra"></i>
+                <span id="copy-text">Salin Email</span>
+              </button>
+
+              <!-- Feedback Tooltip -->
+              <div id="copy-tooltip" class="absolute -top-9 left-1/2 -translate-x-1/2 px-2.5 py-1 bg-charcoal-950 border border-sierra/40 text-sierra font-mono text-[11px] rounded-md shadow-lg pointer-events-none opacity-0 transform translate-y-1 tooltip-anim whitespace-nowrap">
+                Tersalin!
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Direct Email Fallback Link -->
+          <div class="pt-4 text-xs font-mono text-chalk-muted flex items-center gap-2">
+            <span>Direct Email:</span>
+            <a id="contact-direct-email" href="mailto:fatah.pratama@example.com" class="text-chalk hover:text-sierra-light underline decoration-slateBorder underline-offset-4 transition-colors">
+              fatah.pratama@example.com
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="border-t border-slateBorder/60 py-8 px-6 text-center relative z-10">
+    <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-mono text-chalk-muted">
+      <span id="footer-copyright">© 2026 Fatah Pratama. Minimal, modern & quiet engineering.</span>
+      <span id="footer-note" class="text-[11px]">Static SPA • GitHub Pages & Vercel Ready</span>
+    </div>
+  </footer>
+
+  <!-- ==================== MODULAR RENDERING & INTERACTIVITY ==================== -->
+  <script>
+    /**
+     * Fallback Data in case data/portfolio.js fails to load (e.g. strict sandbox)
+     */
+    const FALLBACK_DATA = {
+      profile: {
+        initials: "FP",
+        brandName: "fatah.dev",
+        name: "Fatah Pratama",
+        role: "Software Engineer & Intelligent Systems Enthusiast",
+        statusBadge: "Available for work",
+        collaborationStatus: "Open to Collaborations & Roles",
+        bio: "Fokus pada perancangan arsitektur web yang tangguh, rekayasa backend berperforma tinggi, pipeline integrasi data terotomatisasi, serta implementasi machine learning cerdas untuk menjawab tantangan dunia nyata.",
+        email: "fatah.pratama@example.com",
+        githubUrl: "https://github.com",
+        linkedinUrl: "https://linkedin.com",
+        metrics: [
+          { value: "03+", label: "Tahun Pengalaman" },
+          { value: "15+", label: "Proyek Selesai" },
+          { value: "99.9%", label: "Uptime Mindset" }
+        ]
+      },
+      navigation: [
+        { label: "// about", href: "#about", section: "about" },
+        { label: "// skills", href: "#skills", section: "skills" },
+        { label: "// projects", href: "#projects", section: "projects" },
+        { label: "// contact", href: "#contact", section: "contact" }
+      ],
+      skillCategories: [
+        {
+          id: "backend",
+          num: "01 // Core",
+          icon: "server",
+          title: "Backend & Frameworks",
+          description: "Pondasi logika bisnis modular, scalable, dan aman dengan arsitektur microservices dan monolitik modern.",
+          tags: ["Laravel", "PHP 8.x", "Filament Admin", "REST APIs"]
+        },
+        {
+          id: "database",
+          num: "02 // Data",
+          icon: "database",
+          title: "Database & Data Pipeline",
+          description: "Desain skema data relasional, pemodelan dimensional star-schema, dan otomasi alur ETL terintegrasi.",
+          tags: ["PostgreSQL", "MySQL", "Pentaho PDI", "Supabase"]
+        },
+        {
+          id: "ai",
+          num: "03 // AI",
+          icon: "cpu",
+          title: "AI & Vision Systems",
+          description: "Implementasi computer vision interaktif, ekstraksi koordinat gesture, dan inferensi model on-device yang ringan.",
+          tags: ["OpenCV", "TensorFlow Lite", "Python", "Computer Vision Models"]
+        },
+        {
+          id: "tools",
+          num: "04 // Ops",
+          icon: "terminal",
+          title: "Tools & Workflow",
+          description: "Lingkungan kerja kontainerisasi, pengujian API terstruktur, version control teratur, dan ekosistem Linux.",
+          tags: ["Git", "Docker", "Postman", "Linux"]
+        }
+      ],
+      projects: [
+        {
+          id: "gesture-sign-ai",
+          category: "Computer Vision / Sign Language AI",
+          title: "GestureSign AI — Sistem Pengenalan Isyarat Gamifikasi",
+          description: "Sistem interaktif pengenalan gesture bahasa isyarat real-time berbasis TensorFlow Lite dan MediaPipe on-device dengan modul gamifikasi edukatif untuk mempercepat akselerasi pembelajaran bahasa isyarat secara presisi.",
+          tags: ["TensorFlow Lite", "Python", "OpenCV", "MediaPipe", "WebSockets"],
+          demoUrl: "#",
+          codeUrl: "https://github.com",
+          featured: true
+        },
+        {
+          id: "transact-etl",
+          category: "Data Warehouse & ETL Pipeline",
+          title: "TransactETL — Enterprise Data Warehouse Architecture",
+          description: "Arsitektur star-schema dimensional dan pipeline otomatisasi integrasi data transaksi berskala jutaan baris memakai Pentaho Data Integrator (Kettle) dan PostgreSQL untuk analitik bisnis komprehensif.",
+          tags: ["Pentaho PDI", "PostgreSQL", "Star Schema", "ETL Automation", "SQL"],
+          demoUrl: "#",
+          codeUrl: "https://github.com",
+          featured: false
+        },
+        {
+          id: "estate-core-sqa",
+          category: "Marketplace & SQA ISO/IEC 25010",
+          title: "EstateCore — Property Management & SQA Audited Platform",
+          description: "Platform web manajemen properti dengan arsitektur backend kokoh (Laravel & Filament) yang divalidasi pengujian kualitas komprehensif standar ISO/IEC 25010: Functional Suitability, Performance, dan Security.",
+          tags: ["Laravel", "Filament Admin", "MySQL", "PHPUnit", "ISO/IEC 25010"],
+          demoUrl: "#",
+          codeUrl: "https://github.com",
+          featured: false
+        }
+      ],
+      contact: {
+        badge: "Let's Connect",
+        headline: "Tertarik Berkolaborasi atau Diskusi Proyek?",
+        description: "Saya selalu terbuka untuk diskusi mengenai arsitektur backend, otomasi data pipeline, implementasi computer vision, atau peluang kerja sama baru.",
+        directEmailLabel: "Direct Email:",
+        footerCopyright: "© 2026 Fatah Pratama. Minimal, modern & quiet engineering.",
+        footerNote: "Static SPA • GitHub Pages & Vercel Ready"
+      }
+    };
+
+    // Active Data Resolution
+    const data = window.PORTFOLIO_DATA || FALLBACK_DATA;
+
+    // 1. Render Navigation
+    function renderNavigation() {
+      const desktopNav = document.getElementById('desktop-nav-links');
+      const mobileNav = document.getElementById('mobile-menu');
+
+      if (desktopNav) {
+        desktopNav.innerHTML = data.navigation.map(nav => `
+          <a href="${nav.href}" class="nav-link px-3 py-1.5 rounded-full text-chalk-muted hover:text-chalk hover:bg-slateBorder/40 transition-all duration-200" data-section="${nav.section}">
+            ${nav.label}
+          </a>
+        `).join('');
+      }
+
+      if (mobileNav) {
+        mobileNav.innerHTML = data.navigation.map(nav => `
+          <a href="${nav.href}" class="mobile-nav-link flex items-center justify-between px-3 py-2.5 rounded-lg text-chalk-muted hover:text-chalk hover:bg-slateBorder/40 transition-colors">
+            <span>${nav.label}</span>
+            <i data-lucide="chevron-right" class="w-4 h-4 text-sierra"></i>
+          </a>
+        `).join('');
+      }
+
+      document.getElementById('nav-initials').textContent = data.profile.initials;
+      document.getElementById('nav-brand').textContent = data.profile.brandName;
+      document.getElementById('nav-status-text').textContent = data.profile.statusBadge;
+    }
+
+    // 2. Render Hero
+    function renderHero() {
+      document.getElementById('hero-collaboration-status').textContent = data.profile.collaborationStatus;
+      document.getElementById('hero-name').textContent = data.profile.name;
+      document.getElementById('hero-role').textContent = data.profile.role;
+      document.getElementById('hero-bio').textContent = data.profile.bio;
+
+      const metricsContainer = document.getElementById('hero-metrics');
+      if (metricsContainer) {
+        metricsContainer.innerHTML = data.profile.metrics.map((m, idx) => `
+          <div class="p-3.5 rounded-xl bg-slateCard/60 border border-slateBorder/80 ${idx === 2 ? 'col-span-2 sm:col-span-1' : ''}">
+            <div class="font-mono text-sierra text-xl font-bold">${m.value}</div>
+            <div class="text-xs text-chalk-muted font-mono mt-0.5">${m.label}</div>
+          </div>
+        `).join('');
+      }
+    }
+
+    // 3. Render Skills
+    function renderSkills() {
+      const skillsContainer = document.getElementById('skills-grid');
+      if (!skillsContainer) return;
+
+      skillsContainer.innerHTML = data.skillCategories.map(cat => `
+        <div class="interactive-card p-6 rounded-2xl bg-slateCard border border-slateBorder flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-lg bg-sierra/10 border border-sierra/20 flex items-center justify-center text-sierra">
+                  <i data-lucide="${cat.icon}" class="w-4 h-4"></i>
+                </div>
+                <h3 class="text-base font-semibold text-chalk">${cat.title}</h3>
+              </div>
+              <span class="font-mono text-[11px] text-chalk-muted">${cat.num}</span>
+            </div>
+            <p class="text-xs text-chalk-muted mb-5 leading-relaxed">
+              ${cat.description}
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-2 pt-2 border-t border-slateBorder/60">
+            ${cat.tags.map(tag => `
+              <span class="px-2.5 py-1 rounded-md bg-slateCard-subtle border border-slateBorder text-chalk-body font-mono text-xs hover:border-sierra/50 transition-colors">
+                ${tag}
+              </span>
+            `).join('')}
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // 4. Render Projects
+    function renderProjects() {
+      const projectsContainer = document.getElementById('projects-grid');
+      if (!projectsContainer) return;
+
+      projectsContainer.innerHTML = data.projects.map((proj, idx) => {
+        // Project 1 spans 2 columns on desktop for bento grid aesthetic
+        const isFeatured = idx === 0;
+        return `
+          <div class="interactive-card ${isFeatured ? 'md:col-span-2' : ''} p-6 sm:p-7 rounded-2xl bg-slateCard border border-slateBorder flex flex-col justify-between gap-6 group">
+            <div class="space-y-4">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <span class="px-3 py-1 rounded-full bg-sierra/10 text-sierra font-mono text-xs font-medium border border-sierra/20">
+                  ${proj.category}
+                </span>
+                <span class="font-mono text-xs text-chalk-muted">Production</span>
+              </div>
+
+              <div class="space-y-2">
+                <h3 class="text-lg sm:text-xl font-bold text-chalk group-hover:text-sierra-light transition-colors">
+                  ${proj.title}
+                </h3>
+                <p class="text-xs sm:text-sm text-chalk-body leading-relaxed font-light ${isFeatured ? 'max-w-3xl text-sm sm:text-base' : ''}">
+                  ${proj.description}
+                </p>
+              </div>
+
+              <!-- Tech Tags -->
+              <div class="flex flex-wrap gap-2 pt-1">
+                ${proj.tags.map(tag => `
+                  <span class="px-2.5 py-1 rounded-md bg-slateCard-subtle border border-slateBorder text-chalk-muted font-mono text-[11px]">
+                    ${tag}
+                  </span>
+                `).join('')}
+              </div>
+            </div>
+
+            <!-- Card Actions -->
+            <div class="flex items-center gap-5 pt-4 border-t border-slateBorder/60 text-xs font-mono">
+              <a href="${proj.demoUrl}" class="inline-flex items-center gap-1.5 text-chalk hover:text-sierra-light transition-colors group/link">
+                <span>Demo</span>
+                <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"></i>
+              </a>
+              <a href="${proj.codeUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-chalk-muted hover:text-chalk transition-colors group/link">
+                <i data-lucide="github" class="w-3.5 h-3.5"></i>
+                <span>Source (GitHub)</span>
+                <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"></i>
+              </a>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // 5. Render Contact & Footer
+    function renderContactAndFooter() {
+      document.getElementById('contact-badge').textContent = data.contact.badge;
+      document.getElementById('contact-headline').textContent = data.contact.headline;
+      document.getElementById('contact-description').textContent = data.contact.description;
+      
+      const githubLink = document.getElementById('contact-github');
+      if (githubLink) githubLink.href = data.profile.githubUrl;
+
+      const linkedinLink = document.getElementById('contact-linkedin');
+      if (linkedinLink) linkedinLink.href = data.profile.linkedinUrl;
+
+      const emailLink = document.getElementById('contact-direct-email');
+      if (emailLink) {
+        emailLink.href = `mailto:${data.profile.email}`;
+        emailLink.textContent = data.profile.email;
+      }
+
+      document.getElementById('footer-copyright').textContent = data.contact.footerCopyright;
+      document.getElementById('footer-note').textContent = data.contact.footerNote;
+    }
+
+    // Initialize All Sections
+    function initializePortfolio() {
+      renderNavigation();
+      renderHero();
+      renderSkills();
+      renderProjects();
+      renderContactAndFooter();
+
+      // Safely initialize Lucide Icons
+      if (typeof lucide !== 'undefined' && lucide.createIcons) {
+        lucide.createIcons();
+      }
+    }
+
+    initializePortfolio();
+
+    // ==================== INTERACTIVITY ====================
+
+    // 1. Mobile Menu Toggle
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (mobileBtn && mobileMenu) {
+      mobileBtn.addEventListener('click', () => {
+        const isHidden = mobileMenu.classList.contains('hidden');
+        if (isHidden) {
+          mobileMenu.classList.remove('hidden');
+          mobileMenu.classList.add('flex');
+        } else {
+          mobileMenu.classList.add('hidden');
+          mobileMenu.classList.remove('flex');
+        }
+      });
+
+      // Delegate click to links
+      mobileMenu.addEventListener('click', (e) => {
+        if (e.target.closest('a')) {
+          mobileMenu.classList.add('hidden');
+          mobileMenu.classList.remove('flex');
+        }
+      });
+    }
+
+    // 2. Active Scrollspy
+    function handleScrollspy() {
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.nav-link');
+      const scrollPosition = window.scrollY + 200;
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        const sectionId = section.getAttribute('id');
+
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+          navLinks.forEach(link => {
+            if (link.getAttribute('data-section') === sectionId) {
+              link.classList.add('text-chalk', 'bg-slateBorder/60', 'font-medium');
+              link.classList.remove('text-chalk-muted');
+            } else {
+              link.classList.remove('text-chalk', 'bg-slateBorder/60', 'font-medium');
+              link.classList.add('text-chalk-muted');
+            }
+          });
+        }
+      });
+    }
+
+    window.addEventListener('scroll', handleScrollspy, { passive: true });
+    handleScrollspy();
+
+    // 3. Copy-to-Clipboard Interactive Feedback
+    const copyBtn = document.getElementById('copy-email-btn');
+    const copyText = document.getElementById('copy-text');
+    const copyTooltip = document.getElementById('copy-tooltip');
+
+    if (copyBtn) {
+      copyBtn.addEventListener('click', async () => {
+        const emailToCopy = data.profile.email;
+        try {
+          if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(emailToCopy);
+          } else {
+            const textArea = document.createElement('textarea');
+            textArea.value = emailToCopy;
+            textArea.style.position = 'fixed';
+            textArea.style.left = '-999999px';
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            document.execCommand('copy');
+            textArea.remove();
+          }
+
+          copyText.textContent = 'Tersalin!';
+          copyTooltip.classList.remove('opacity-0', 'translate-y-1');
+          copyTooltip.classList.add('opacity-100', 'translate-y-0');
+
+          setTimeout(() => {
+            copyText.textContent = 'Salin Email';
+            copyTooltip.classList.remove('opacity-100', 'translate-y-0');
+            copyTooltip.classList.add('opacity-0', 'translate-y-1');
+          }, 2000);
+
+        } catch (err) {
+          console.error('Gagal menyalin:', err);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
