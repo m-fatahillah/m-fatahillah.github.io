@@ -157,7 +157,10 @@
 <body class="bg-ambient text-chalk-body font-sans antialiased selection:bg-sierra/25 selection:text-chalk-heading min-h-screen relative overflow-x-hidden">
 
   <!-- Matrix Horizontal Digital Rain Canvas Background -->
-  <canvas id="matrix-canvas" class="fixed inset-0 pointer-events-none z-0 opacity-20" aria-hidden="true"></canvas>
+  <canvas id="matrix-canvas" class="fixed inset-0 pointer-events-none z-0 opacity-30" aria-hidden="true"></canvas>
+
+  <!-- Radial Vignette Mask Overlay (Agar Teks Tengah Bersih & Tidak Tembus) -->
+  <div class="fixed inset-0 pointer-events-none z-[1] bg-[radial-gradient(ellipse_at_center,rgba(12,15,20,0.85)_0%,rgba(12,15,20,0.98)_100%)]" aria-hidden="true"></div>
 
   <!-- ==================== 1. FLOATING MINIMALIST NAVBAR ==================== -->
   <header class="fixed top-4 left-0 right-0 z-50 px-4 sm:px-6 pointer-events-none">
@@ -565,7 +568,7 @@
       const metricsContainer = document.getElementById('hero-metrics');
       if (metricsContainer) {
         metricsContainer.innerHTML = PORTFOLIO_DATA.personal.metrics.map((m, idx) => `
-          <div class="p-3.5 rounded-xl bg-slateCard/60 border border-slateBorder/80 ${idx === 2 ? 'col-span-2 sm:col-span-1' : ''}">
+          <div class="p-3.5 rounded-xl bg-slateCard border border-slateBorder shadow-sm ${idx === 2 ? 'col-span-2 sm:col-span-1' : ''}">
             <div class="font-mono text-sierra text-xl font-bold">${m.value}</div>
             <div class="text-xs text-chalk-muted font-mono mt-0.5">${m.label}</div>
           </div>
@@ -871,16 +874,22 @@
           const x = drops[i] * fontSize;
           const y = (i + 1) * fontSize;
 
-          // Leading head character: glowing off-white
-          ctx.fillStyle = '#f8fafc';
+          // Leading head character: glowing luminous pure white
+          ctx.shadowColor = '#38bdf8';
+          ctx.shadowBlur = 6;
+          ctx.fillStyle = '#ffffff';
           ctx.fillText(text, x, y);
 
-          // Trailing stream character: Sky Blue / Ice Cyan (#38bdf8 / #0ea5e9)
+          // Trailing stream character: vibrant Electric Cyan / Sky Blue
           if (drops[i] > 0) {
             const trailChar = chars[Math.floor(Math.random() * chars.length)];
-            ctx.fillStyle = Math.random() > 0.35 ? '#38bdf8' : '#0ea5e9';
+            ctx.shadowBlur = 3;
+            ctx.fillStyle = Math.random() > 0.4 ? '#38bdf8' : '#00f0ff';
             ctx.fillText(trailChar, (drops[i] - 1) * fontSize, y);
           }
+
+          // Reset shadow blur
+          ctx.shadowBlur = 0;
 
           // Reset horizontally when reaching right edge with slight random stagger
           if (x > canvas.width && Math.random() > 0.96) {
