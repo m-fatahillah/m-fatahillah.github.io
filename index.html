@@ -156,6 +156,9 @@
 
 <body class="bg-ambient text-chalk-body font-sans antialiased selection:bg-sierra/25 selection:text-chalk-heading min-h-screen relative overflow-x-hidden">
 
+  <!-- Matrix Horizontal Digital Rain Canvas Background -->
+  <canvas id="matrix-canvas" class="fixed inset-0 pointer-events-none z-0 opacity-20" aria-hidden="true"></canvas>
+
   <!-- ==================== 1. FLOATING MINIMALIST NAVBAR ==================== -->
   <header class="fixed top-4 left-0 right-0 z-50 px-4 sm:px-6 pointer-events-none">
     <nav class="max-w-4xl mx-auto pointer-events-auto backdrop-blur-md bg-slateCard/80 border border-slateBorder rounded-full px-4 sm:px-6 py-2.5 sm:py-3 shadow-xl shadow-black/50 flex items-center justify-between transition-all duration-300">
@@ -820,6 +823,78 @@
         }
       });
     }
+
+    // 4. Matrix Horizontal Digital Rain Background Effect (Jonito.dev style)
+    function initMatrixRain() {
+      const canvas = document.getElementById('matrix-canvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+
+      // Katakana Japanese characters + binary & technical symbols
+      const chars = 'ｦｱｳｴｵｶｷｹｺｻｼｽｾｿﾀﾂﾃﾅﾆﾇﾈﾊﾋﾎﾏﾐﾑﾒﾓﾔﾕﾗﾘﾜ0123456789ABCDEF01<>{}/*+=~_';
+      const fontSize = 15;
+      let drops = [];
+
+      function resize() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        const rows = Math.floor(canvas.height / fontSize);
+        drops = [];
+        for (let i = 0; i < rows; i++) {
+          drops[i] = Math.floor(Math.random() * (canvas.width / fontSize));
+        }
+      }
+
+      window.addEventListener('resize', resize, { passive: true });
+      resize();
+
+      // FPS Throttling to ~30 FPS for ultra-smooth 60 FPS compositor and low CPU/battery consumption
+      let lastTime = 0;
+      const fps = 30;
+      const interval = 1000 / fps;
+
+      function draw(currentTime) {
+        requestAnimationFrame(draw);
+
+        const delta = currentTime - lastTime;
+        if (delta < interval) return;
+        lastTime = currentTime - (delta % interval);
+
+        // Subtle dark fade background (following palette charcoal #0c0f14)
+        ctx.fillStyle = 'rgba(12, 15, 20, 0.12)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        ctx.font = `${fontSize}px "JetBrains Mono", monospace`;
+
+        for (let i = 0; i < drops.length; i++) {
+          const text = chars[Math.floor(Math.random() * chars.length)];
+          const x = drops[i] * fontSize;
+          const y = (i + 1) * fontSize;
+
+          // Leading head character: glowing off-white
+          ctx.fillStyle = '#f8fafc';
+          ctx.fillText(text, x, y);
+
+          // Trailing stream character: Sky Blue / Ice Cyan (#38bdf8 / #0ea5e9)
+          if (drops[i] > 0) {
+            const trailChar = chars[Math.floor(Math.random() * chars.length)];
+            ctx.fillStyle = Math.random() > 0.35 ? '#38bdf8' : '#0ea5e9';
+            ctx.fillText(trailChar, (drops[i] - 1) * fontSize, y);
+          }
+
+          // Reset horizontally when reaching right edge with slight random stagger
+          if (x > canvas.width && Math.random() > 0.96) {
+            drops[i] = Math.floor(Math.random() * -5);
+          }
+
+          drops[i]++;
+        }
+      }
+
+      requestAnimationFrame(draw);
+    }
+
+    initMatrixRain();
   </script>
 </body>
 </html>
